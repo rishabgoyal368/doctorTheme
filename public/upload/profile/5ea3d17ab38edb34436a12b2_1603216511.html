@@ -1,0 +1,2741 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+  
+  
+  
+  
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import style.css-->
+  <link type="text/css" rel="stylesheet" href="/frontent/css/style.css" />
+  <link type="text/css" rel="stylesheet" href="/frontent/css/responsive.css" />
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/frontent/css/materialize.css" media="screen,projection" />
+  <link rel="stylesheet" href="/frontent/css/material-design-iconic-font.min.css" />
+  <link rel="stylesheet" href="/frontent/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/frontent/css/lightslider.css" />
+  <!--Let browser know website is optimized for mobile-->
+
+  <!--Import masonry css-->
+  <link rel="stylesheet" type="text/css" href="/frontent/css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/frontent/css/nouislider.css" />
+
+  <link href='/frontent/css/fullcalendar.css' rel='stylesheet' />
+  <link href='/frontent/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+  <link rel="icon" href="/ABC.png" type="image/x-icon">
+
+  <title> Profile</title>
+  <meta name="description" content="" />
+
+  <meta name="csrf-token" content="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">
+
+  <link href='/frontent/css/jquery-ui.multidatespicker.css' rel='stylesheet' />
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.6/mediaelementplayer.css">
+  <!-- <link href='/frontent/css/demo.css' rel='stylesheet' />
+  <link href='/frontent/css/airplay.css' rel='stylesheet' /> -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+
+
+
+<body>
+    
+  <div id="load"></div>
+  <!-- HEADER STARTS HERE -->
+  <section class="header ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col l3 m3 s3 menu">
+          <div class="valign-wrapper center sidenav" id="slide-out">
+            <ul class="">
+              <li><a href="https://borrowmyne.softuvo.xyz/howitwork">How it works</a></li>
+              <li><a href="https://borrowmyne.softuvo.xyz/howitwork#how-borrowing-work">How Borrowing Works</a></li>
+              <li><a href="https://borrowmyne.softuvo.xyz/howitwork#how-lending-work">How Lending Works</a></li>
+              <li><a href="/list-item">List An item</a></li>
+              <li><a href="https://borrowmyne.softuvo.xyz/rental">Rental Companies </a></li>
+              <li><a href="https://borrowmyne.softuvo.xyz/account">Account</a></li>
+              <li><a href="https://borrowmyne.softuvo.xyz/blog">Blog </a></li>
+              <li><a href="https://borrowmyne.softuvo.xyz/faq">Help And FAQ </a></li>
+                            <li><a href="https://borrowmyne.softuvo.xyz/logout" href="javascript:void(0)" onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">Logout</a></li>
+              <form id="logout-form" action="https://borrowmyne.softuvo.xyz/logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">              </form>
+                          </ul>
+            <a class="sidenav-close"><i class="material-icons">highlight_off</i></a>
+          </div>
+          <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+        <div class="col l4 m4 s12 logo right-align"> <a href="/"><img src="/frontent/images/logo.png" alt="Logo" /></a> </div>
+        <div class="col l5 m5 s9 header_right">
+
+
+
+                    <!-- after login -->
+          <div class="after-login right">
+            <input type="hidden" name="reviewUserId" id="reviewUserId" value="5ea3d17ab38edb34436a12b2">
+            <div class="after_login_div">
+              <a class="empty_div dropdown-trigger" data-target='empty_cart_wrapper'>
+                <i class="zmdi zmdi-shopping-basket mr-10"></i> Empty <i class="zmdi zmdi-chevron-down ml-10"></i>
+              </a>
+              <!-- Dropdown Structure -->
+              <ul class="dropdown-content cart_content" id='empty_cart_wrapper'>
+
+                <div class="header_cart_scroll">
+                                                                      </div>
+
+                <div class="remove_cart center w-100">
+                  <div class="bottom_buttons">
+                    <a class="common_btn waves-effect view_bag" href="/view-bag">View Tote</a>
+                    <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('SendRequest').submit();" class="common_btn waves-effect checkout_option">Checkout</a>
+                    <form id="SendRequest" action="https://borrowmyne.softuvo.xyz/AddProductCheckoutMultiple" method="POST" style="display: none;">
+                      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">
+                    </form>
+                  </div>
+                </div>
+
+              </ul>
+            </div>
+            <div class="after_login_div active">
+              <a class="user_login text-uppercase active" href="/user-profile/5ea3d17ab38edb34436a12b2">
+                <span>
+                                                      <img src="/frontent/images/work6.png" id="user-image-upload">
+                                    
+                </span>
+                                <font class="hide-on-small-only"> rishabtest103 </font>
+                              </a>
+            </div>
+
+            <div class="after_login_div un-active">
+              <a class="circle_div un-active" href="https://borrowmyne.softuvo.xyz/inbox">
+                <i class="zmdi zmdi-email"></i>
+              </a>
+            </div>
+            <div class="after_login_div un-active">
+              <a class="circle_div un-active" href="https://borrowmyne.softuvo.xyz/wishlist">
+                <i class="zmdi zmdi-favorite"></i>
+              </a>
+            </div>
+            <div class="after_login_div notification_div">
+              <a class="circle_div dropdown-trigger" data-target='notification_scroll_wrapper'>
+
+                <i class="zmdi zmdi-notifications"> </i>
+
+              </a>
+              <span class="notify_count">1</span>
+              <!-- Dropdown Structure -->
+              <ul class="dropdown-content" id='notification_scroll_wrapper'>
+
+                <form action="https://borrowmyne.softuvo.xyz/inbox" method="post">
+                                                      <li>
+                    <a data-noti="5ec8c8a1b38edb24b4342be8" data-user="5ea3d17ab38edb34436a12b2" data-type="account">We do not have your account details on record, please tell us how to pay you?</a>
+                  </li>
+                                                    </form>
+
+              </ul>
+            </div>
+          </div>
+          <!-- after login ends-->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- HEADER ENDS HERE -->
+  
+<section class="banner"> <img src="/frontent/images/header_banner.jpg" alt="Image" />
+    <div class="banner_overlay">
+        <div class="banner_text">
+            <div class="banner_text_wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l12 m12 s12 center">
+                                                    <div class="select_search_field home_search_field w-100">
+                                <form action="https://borrowmyne.softuvo.xyz/products-details" method="GET">
+                                    <div class="col l3 m3 s12 select_field_column left-align no-padding">
+                                        <div class="input-field">
+                                            <select name="filterCategory[]" class="filterCat">
+                                                <option value="" disabled selected>Search Category</option>
+                                                                                                <option value="5e0a03ccb38edb206e785a73" data-selCat="Beach Wear">Beach Wear</option>
+                                                                                                <option value="5e0a01bab38edb444c422d72" data-selCat="Co ords">Co ords</option>
+                                                                                                <option value="5e0a01d3b38edb44672e8ab2" data-selCat="Coats &amp; Jackets">Coats &amp; Jackets</option>
+                                                                                                <option value="5e0a01abb38edb42ee197372" data-selCat="Dresses">Dresses</option>
+                                                                                                <option value="5e0a03e9b38edb42f43410c2" data-selCat="Jumpers">Jumpers</option>
+                                                                                                <option value="5e0a036fb38edb4311516802" data-selCat="Jumpsuits &amp; Playsuits">Jumpsuits &amp; Playsuits</option>
+                                                                                                <option value="5e1d3d30b38edb5d326c87a4" data-selCat="Nwa Type">Nwa Type</option>
+                                                                                                <option value="5e0a0433b38edb428b6f03a2" data-selCat="Shorts">Shorts</option>
+                                                                                                <option value="5e0a046ab38edb438718d0a2" data-selCat="Skirts">Skirts</option>
+                                                                                                <option value="5e0a0365b38edb44672e8ab3" data-selCat="Tops">Tops</option>
+                                                                                                <option value="5e0a03c2b38edb42a6017262" data-selCat="Trousers">Trousers</option>
+                                                                                                <option value="5e0a000bb38edb7ba018c5a8" data-selCat="swim">swim</option>
+                                                                                                <option value="5e1c11a5b38edb5a0827be13" data-selCat="testttt">testttt</option>
+                                                                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col l3 m3 s12 select_field_column left-align no-padding">
+                                        <div class="input-field">
+                                            <select name="filterDesigner[]" >
+                                                <option value="" disabled selected>All Designers</option>
+                                                                                                <option value="5e0a0803b38edb444c422d74">Acler</option>
+                                                                                                <option value="5e0a080fb38edb4311516806">Agent Provocateur</option>
+                                                                                                <option value="5e204f9db38edb08814e5831">Aja designer</option>
+                                                                                                <option value="5e0a0817b38edb215826e6b4">Aje</option>
+                                                                                                <option value="5e0a0821b38edb2286560fd2">Alexa Chung</option>
+                                                                                                <option value="5e0a082fb38edb227704f254">Alexander McQueen</option>
+                                                                                                <option value="5e0a0847b38edb444c422d75">Alexander Wang</option>
+                                                                                                <option value="5e0a085db38edb456406c144">Balenciaga</option>
+                                                                                                <option value="5e0a08fdb38edb43b35c7f02">Balmain</option>
+                                                                                                <option value="5e0a0905b38edb21ab66c889">Bcbgmaxazria</option>
+                                                                                                <option value="5e0a090db38edb42f43410c6">Bec &amp; Bridge</option>
+                                                                                                <option value="5e0a0915b38edb44672e8ab6">Bottega Veneta</option>
+                                                                                                <option value="5e0a091db38edb4311516807">Burberry</option>
+                                                                                                <option value="5e0a0937b38edb43b35c7f03">C/MEO Collective</option>
+                                                                                                <option value="5e0a09beb38edb444c422d76">Calvin Klein</option>
+                                                                                                <option value="5e0a09e4b38edb456406c145">Camilla</option>
+                                                                                                <option value="5e0a09f3b38edb43b35c7f04">Capucci</option>
+                                                                                                <option value="5e0a09ebb38edb438718d0a4">Chanel</option>
+                                                                                                <option value="5e0a09fab38edb21ab66c88a">Chloé</option>
+                                                                                                <option value="5e0a0a0bb38edb42f43410c7">Diesel</option>
+                                                                                                <option value="5e0a0a14b38edb44672e8ab7">Dion Lee</option>
+                                                                                                <option value="5e0a0a1bb38edb4311516808">Donna Ida</option>
+                                                                                                <option value="5e0a0a22b38edb215826e6b5">Dsquared2</option>
+                                                                                                <option value="5e0a0a2ab38edb206e785a76">Eliya The Label</option>
+                                                                                                <option value="5e0a0a30b38edb22fc4d3d87">Elliatt</option>
+                                                                                                <option value="5e0a0a37b38edb444c422d77">Emilio Pucci</option>
+                                                                                                <option value="5e0a0a43b38edb456406c146">Fendi</option>
+                                                                                                <option value="5e0a0a4ab38edb439516ccb3">Finders Keepers</option>
+                                                                                                <option value="5e0a0a52b38edb2286560fd3">Flynn Skye</option>
+                                                                                                <option value="5e0a0a58b38edb227704f255">For Love and Lemons</option>
+                                                                                                <option value="5e0a0a61b38edb444c422d78">Foxiedox</option>
+                                                                                                <option value="5e0a0a73b38edb456406c147">Francesca Couture</option>
+                                                                                                <option value="5e0a0a80b38edb439516ccb4">Galanni</option>
+                                                                                                <option value="5e0a0a86b38edb438718d0a5">Galvin</option>
+                                                                                                <option value="5e0a0a8db38edb43b35c7f05">Givenchy</option>
+                                                                                                <option value="5e0a0a94b38edb21ab66c88b">Gucci</option>
+                                                                                                <option value="5e0a0a9cb38edb42f43410c8">Guess</option>
+                                                                                                <option value="5e0a0aa4b38edb428b6f03a4">House of CB</option>
+                                                                                                <option value="5e0a0aabb38edb207b7ec4f7">House of Holland</option>
+                                                                                                <option value="5e0a0ab5b38edb42a6017268">J&#039;Adore</option>
+                                                                                                <option value="5e0a0ac0b38edb206e785a77">Jovani</option>
+                                                                                                <option value="5e0a0ac8b38edb22fc4d3d88">Just Cavalli</option>
+                                                                                                <option value="5e0a0ad0b38edb444c422d79">Keepsake The Label</option>
+                                                                                                <option value="5e0a0ad9b38edb428b6f03a5">Kendal &amp; Kylie</option>
+                                                                                                <option value="5e0a0ae2b38edb215826e6b6">Lavish Alice</option>
+                                                                                                <option value="5e0a0aefb38edb227704f256">LoveShackFancy</option>
+                                                                                                <option value="5e0a0ae9b38edb2286560fd4">Lovers + Friends</option>
+                                                                                                <option value="5e0a0af6b38edb42ae1fbd43">Majorelle</option>
+                                                                                                <option value="5e0a0afdb38edb42ee197373">Michael Costello</option>
+                                                                                                <option value="5e0a0b04b38edb428b6f03a6">Misa Los Angeles</option>
+                                                                                                <option value="5e0a0b0bb38edb207b7ec4f8">Misha Collection</option>
+                                                                                                <option value="5e0a0b13b38edb42a6017269">Missoni</option>
+                                                                                                <option value="5e0a0b1ab38edb21ab66c88c">Mode Mwah</option>
+                                                                                                <option value="5e0a0b21b38edb42f43410c9">Nadine Merabi</option>
+                                                                                                <option value="5e0a0b27b38edb44672e8ab8">Needle and Thread</option>
+                                                                                                <option value="5e1c1103b38edb5a10063e22">New designer</option>
+                                                                                                <option value="5e1c134cb38edb5a077d07c2">New designer-0001</option>
+                                                                                                <option value="5e1c11a5b38edb5a0827be12">New designer-001</option>
+                                                                                                <option value="5e1d3d30b38edb5d326c87a3">Nwa design</option>
+                                                                                                <option value="5e0a0b2fb38edb4311516809">Off White</option>
+                                                                                                <option value="5e0a0b3ab38edb215826e6b7">Paco Rabanne</option>
+                                                                                                <option value="5e0a0b41b38edb2286560fd5">Prada</option>
+                                                                                                <option value="5e0a0b51b38edb444c422d7a">Ralph Lauren</option>
+                                                                                                <option value="5e0a0b58b38edb456406c148">Rat &amp; Boa</option>
+                                                                                                <option value="5e0a0b5fb38edb439516ccb5">Reiss</option>
+                                                                                                <option value="5e0a0b66b38edb438718d0a6">Retrofete</option>
+                                                                                                <option value="5e0a0b6cb38edb43b35c7f06">Ronny Kobo</option>
+                                                                                                <option value="5e0a0b78b38edb21ab66c88d">Self Potrait</option>
+                                                                                                <option value="5e0a0b7fb38edb42f43410ca">Sir The Label</option>
+                                                                                                <option value="5e0a0b85b38edb44672e8ab9">Sister Jane</option>
+                                                                                                <option value="5e0a0b8cb38edb431151680a">Stella Mcartney</option>
+                                                                                                <option value="5e0a0b9eb38edb2286560fd6">Ted Baker</option>
+                                                                                                <option value="5e0a0ba5b38edb227704f258">The Dolls House Fashion</option>
+                                                                                                <option value="5e0a0badb38edb42ae1fbd44">The Jetset Diaries</option>
+                                                                                                <option value="5e0a0bb4b38edb42ee197374">Three Floor</option>
+                                                                                                <option value="5e0a0bbcb38edb428b6f03a7">Thurley</option>
+                                                                                                <option value="5e0a0bc3b38edb207b7ec4f9">Tom Ford</option>
+                                                                                                <option value="5e0a0bccb38edb43b35c7f07">Valentino</option>
+                                                                                                <option value="5e0a0bd6b38edb21ab66c88e">Versache</option>
+                                                                                                <option value="5e0a0bddb38edb42f43410cb">Victoria Beckham</option>
+                                                                                                <option value="5e0a0be5b38edb44672e8aba">Wendy Gray Handmade</option>
+                                                                                                <option value="5e0a0becb38edb431151680b">Wildfox</option>
+                                                                                                <option value="5e0a0bf4b38edb215826e6b8">Yves Saint Laurent</option>
+                                                                                                <option value="5e0a0bfcb38edb2286560fd7">Zimmerman</option>
+                                                                                                <option value="5e203ba5b38edb087b791335">new Desoigner Added</option>
+                                                                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col l3 m3 s12 select_field_column left-align no-padding">
+                                        <div class="input-field">
+                                            <select multiple name="filterSize[]">
+                                                <option value="" disabled >All Sizes</option>
+                                                                                                <option value="5e0a0614b38edb4311516803">0</option>
+                                                                                                <option value="5e0a05aab38edb42f43410c3">2</option>
+                                                                                                <option value="5e0a05b1b38edb456406c142">4</option>
+                                                                                                <option value="5e0a05b7b38edb207b7ec4f4">6</option>
+                                                                                                <option value="5e0a05beb38edb42a6017263">8</option>
+                                                                                                <option value="5e0a05c5b38edb206e785a74">10</option>
+                                                                                                <option value="5e0a05cdb38edb22fc4d3d85">12</option>
+                                                                                                <option value="5e0a05d4b38edb444c422d73">14</option>
+                                                                                                <option value="5e0a05dbb38edb456406c143">16</option>
+                                                                                                <option value="5e0a05e2b38edb439516ccb2">18</option>
+                                                                                                <option value="5e0a05e9b38edb438718d0a3">20</option>
+                                                                                                <option value="5e0a05f1b38edb227704f253">22</option>
+                                                                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col l3 m3 s12 select_field_column left-align no-padding">
+                                        <div class="input-field">
+                                            <input type="text" class="datepicker" name="filterSelectDate" id="filterselectDates" placeholder="Availability">
+                                            <input type="hidden" name="lastDate " value="" id="lastDate">
+                                            <input type="hidden" name="flterlastDate " value="" id="flterlastDate">
+                                        </div>
+                                    </div>
+                                    <div class="col l3 m3 s12 select_field_column left-align no-padding">
+                                        <div class="input-field">
+                                            <button type="submit" class="common_btn waves-effect center">Search All</button>
+
+                                            <!-- <a href="products.php" class="common_btn waves-effect center">Search All</a> -->
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BANNER ENDS HERE -->
+
+<!-- CONTENT STARTS HERE -->
+<section class="feature_columns wishlist">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col l2 m2 s2 feature_column_text center">
+                <a href="https://borrowmyne.softuvo.xyz/user-profile/5ea3d17ab38edb34436a12b2" class="w-100">
+                    <div class="feature_image w-100 valign-wrapper center">
+                        <div class="circle-area" id="activeUserProfile"> <img src="/frontent/images/feature_icon1.png" alt="Logo" /> </div>
+                    </div>
+                    <h4>Profile</h4>
+                    <p>It’s all about you! Personalise and manage your wardrobe.</p>
+                </a> </div>
+            <div class="col l2 m2 s2 feature_column_text center"> <a href="/reservations" class="w-100">
+                    <div class="feature_image w-100 valign-wrapper center">
+                        <div class="circle-area" id="activeReservations"><img src="/frontent/images/feature_icon8.png" alt="Logo" /> </div>
+                    </div>
+                    <h4>Reservations</h4>
+                    <p>Manage your Booking Requests, Upcoming Rental Bookings, Booking Requests you have sent under My Orders and and all Past Orders</p>
+                </a> </div>
+            <div class="col l2 m2 s2 feature_column_text center"> <a href="/inbox" class="w-100">
+                    <div class="feature_image w-100 valign-wrapper center">
+                        <div class="circle-area" id="activeInbox"><img src="/frontent/images/feature_icon9.png" alt="Logo" /> </div>
+                    </div>
+                    <h4>Inbox</h4>
+                    <p>Keep in contact with all Lenders and Borrowers via our internal messaging system.</p>
+                </a> </div>
+            <div class="col l2 m2 s2 feature_column_text center"> <a href="/wishlist" class="w-100">
+                    <div class="feature_image w-100 valign-wrapper center">
+                        <div class="circle-area" id="activeWishlist"> <img src="/frontent/images/feature_icon10.png" alt="Logo" /> </div>
+                    </div>
+                    <h4>Wishlist</h4>
+                    <p>This is the home of your Favourite items, click the heart on the top right hand of any image and save for a later event.</p>
+                </a> </div>
+            <div class="col l2 m2 s2 feature_column_text center"> <a href="/account" class="w-100">
+                    <div class="feature_image w-100 valign-wrapper center">
+                        <div class="circle-area" id="activeAccount"> <img src="/frontent/images/feature_icon11.png" alt="Logo" /> </div>
+                    </div>
+                    <h4>Account</h4>
+                    <p>This is where you provide us with a bank account and personal information. It’s really boring but really important we know how to pay you!</p>
+                </a> </div>
+        </div>
+    </div>
+</section>
+<section class="list_view user_profile">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col l10 m12 offset-l1  s12">
+                <div class="col l3 m4 s12">
+                                                            <div class="wardrobe_profile">
+                        <img src="/frontent/images/work6.png" id="user-image-upload" style="width:200px;height:200px">
+                                            </div>
+                                        
+                </div>
+                <div class="col l7 m8 s12">
+
+                    <input type="hidden" class="verifiedID" name="verifiedID" value="5ea3d17ab38edb34436a12b2">
+                    <input type="hidden" class="Verified_firstname" name="Verified_firstname" value="rishabtest103">
+                    <input type="hidden" class="Verified_lastname" name="Verified_lastname" value="Goyal">
+                    <input type="hidden" class="Verified_email" name="Verified_email" value="rishabtest01@yopmail.com">
+                    <input type="hidden" class="Verified_phone" name="Verified_phone" value="07508980630">
+                    <div class="designer_block left">
+                        <p class="designer_name">rishabtest103 </p>
+                        <p class=" mb-10">
+                            <span class="wardrobe_rating">
+                                                                                                      <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                        </span>
+                            <span class="review">0 Review(s)</span>
+                        </p>
+                        <p class="mb-20"> <span class="left_area">Share Wardrobe :</span> <span class="right_box"> <a href="#add_link" class=" modal-trigger shareWardrobeDesign"> SHARE WARDROBE </a></span>
+                            <a href="#" id="shareLinkDesigner" style="display: none;"> https://borrowmyne.softuvo.xyz/designer-list/5ea3d17ab38edb34436a12b2 </a>
+                        </p>
+                        <p class="mb-20"><span class="left_area">Tag Us :</span> <span class="right_box">@BorrowMyne</span>
+                            <span class="right_box">#BorrowMyne</span>
+                        </p>
+                        <div class="right_block">
+                            <span class="heading_share">Share :</span>
+                            <span>
+                                <ul class="social_links images_social w-100">
+                                    <!-- YMyQJmaBk083pvTG -->
+                                    <li><iframe src="https://www.facebook.com/plugins/share_button.php?href=https://borrowmyne.softuvo.xyz/designer-list/5ea3d17ab38edb34436a12b2&layout=button&size=small&appId=573179613089305&width=59&height=20" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> </li>
+                                    <li><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"></a>
+                                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    </li>
+                                    <!-- <li><a href="https://www.instagram.com/"><i class="zmdi zmdi-instagram"></i></a></li> -->
+                                    <li>
+                                        <!-- <a href="https://pinterest.com/pin/create/button/?url=https://borrowmyne.softuvo.xyz/designer-list/5ea3d17ab38edb34436a12b2&media=https://borrowmyne.softuvo.xyz/images/&description=Rishab" target="_blank" class=" pin-it-button" count-layout="horizontal">
+                                            <img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" />
+                                        </a> -->
+                                        <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+                                        <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
+                                        </a>
+                                        <!-- <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a> -->
+                                    </li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                                        <div class="right small-left">
+
+                        
+
+
+                                                <!-- // ===============>USER STATUS IS NOT APPLIED =================//  -->
+                        <i class="zmdi zmdi-alert-circle Checkfalse"></i>
+                        <div class="overlay_become">
+                            <input type="button" id="btn_verify" class="btn_verify" value="Become Id Verified">
+                        </div>
+                        
+                                            </div>
+                    <div class="clearfix"></div>
+                    <div class="right small-left mt-10">
+
+
+                                                                        <span class="mode">Holiday Mode</span>
+                        <div class="switch holiday_mode">
+                            <label>
+                                <input type="checkbox"  >
+                                <span class="lever modal-trigger trash-icon clickHolidayMOde"  data-target="delete_modal1"  ></span>
+                            </label>
+                        </div>
+
+                        <input type="hidden" name="userId" id="GetHolidayModeuserId" value="5ea3d17ab38edb34436a12b2">
+                                                
+
+
+
+                    </div>
+                                    </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>
+
+<section class="wardrobes_section favorites_block user_login_profile">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col l12 m12 s12 center mb-25 user_profile_btn">
+                                                <a href="/account" class="common_btn waves-effect">Edit Profile</a>
+                                
+
+
+                <a href="/designer-list/5ea3d17ab38edb34436a12b2" class="common_btn waves-effect">View Wardrobe</a>
+
+
+
+            </div>
+            <div class="col l12 m12 s12 center common_tittle">
+                <h2 class="text-uppercase">Your wardrobe</h2>
+            </div>
+            <div class="clearfix"></div>
+            <div class="wardrobe_columns_section w-100">
+                <div class="col l3 m6 s12">
+                    <div class="wardrobe_column_wrapper add_item_wardrobe w-100">
+                        <div class="wardrobe_first_column">
+                            <div class="wardrobe_image">
+                                <a href="/list-item"><img src="/frontent/images/plus.png"></a>
+                            </div>
+                            <div class="wardrobe_item">
+                                <p>add an item to wardrobe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col l3 m6 s6">
+                    <div class="wardrobe_column_wrapper w-100"> <a href="https://borrowmyne.softuvo.xyz/view-product/5ec8c7a9b38edb4908267f53" class="wardrobe_column_main">
+                                                        <div class="wardrobe_column_image w-100">
+                                <img src="/images/1590216534.2.jpeg" alt="Image" />
+                            </div>
+                            
+                            <span class="ward_wishlist"><i class="zmdi zmdi-favorite-outline"></i></span>
+                            <div class="wardrobe_profile">
+                                                                                                <img src="/frontent/images/work6.png" id="user-image-upload">
+                                                                                            </div>
+                            <div class="wardrobe_content w-100">
+                                                                <h3 class="text-uppercase">Alexa Chung</h3>
+                                                                <p><span class="left">DRESS-001</span><span class="right">(0)
+                                        <span class="wardrobe_rating">
+                                                                                                                                          <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                        </span>
+                                    </span></p>
+                                    <h4><strong>
+                                            &pound;134.00
+                                            Rent</strong> <small>(£ 450.00 RRP)</small>
+                                    </h4>
+                                <!-- <h4><strong>&pound;134.00</strong> 
+                                Rent</strong<small>(&pound;450.00 RRP)</small> </h4> -->
+                            </div>
+                        </a>
+                    </div>
+                                                            <div class="center w-100 mt-20">
+
+                        <a href="/edit-list-item/5ec8c7a9b38edb4908267f53" class="btn_verify">Edit The Item</a>
+                        <!-- <a href="https://borrowmyne.softuvo.xyz/delete-list-item" class="trash-icon" href="javascript:void(0)" onclick="event.preventDefault();
+                        document.getElementById('5ec8c7a9b38edb4908267f53deletProduct').submit();">
+                            <i class="zmdi zmdi-delete"></i>
+                        </a> -->
+                        <a href="#delete_modal" class="modal-trigger trash-icon AddProductId" data-productIDDelete="5ec8c7a9b38edb4908267f53">
+                            <i class="zmdi zmdi-delete "></i>
+                        </a>
+                    </div>
+                                                        </div>
+                                <div class="col l3 m6 s6">
+                    <div class="wardrobe_column_wrapper w-100"> <a href="https://borrowmyne.softuvo.xyz/view-product/5ec7d4a6b38edb7bc3399083" class="wardrobe_column_main">
+                                                        <div class="wardrobe_column_image w-100">
+                                <img src="/frontent/images/work6.png" alt="Image" />
+                            </div>
+
+
+                            
+                            <span class="ward_wishlist"><i class="zmdi zmdi-favorite-outline"></i></span>
+                            <div class="wardrobe_profile">
+                                                                                                <img src="/frontent/images/work6.png" id="user-image-upload">
+                                                                                            </div>
+                            <div class="wardrobe_content w-100">
+                                                                <p><span class="left">Dress-03</span><span class="right">(0)
+                                        <span class="wardrobe_rating">
+                                                                                                                                          <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                        </span>
+                                    </span></p>
+                                    <h4><strong>
+                                            &pound;0.00
+                                            Rent</strong> <small>(£ 400.00 RRP)</small>
+                                    </h4>
+                                <!-- <h4><strong>&pound;0.00</strong> 
+                                Rent</strong<small>(&pound;400.00 RRP)</small> </h4> -->
+                            </div>
+                        </a>
+                    </div>
+                                                            <div class="center w-100 mt-20">
+
+                        <a href="/edit-list-item/5ec7d4a6b38edb7bc3399083" class="btn_verify">Edit The Item</a>
+                        <!-- <a href="https://borrowmyne.softuvo.xyz/delete-list-item" class="trash-icon" href="javascript:void(0)" onclick="event.preventDefault();
+                        document.getElementById('5ec7d4a6b38edb7bc3399083deletProduct').submit();">
+                            <i class="zmdi zmdi-delete"></i>
+                        </a> -->
+                        <a href="#delete_modal" class="modal-trigger trash-icon AddProductId" data-productIDDelete="5ec7d4a6b38edb7bc3399083">
+                            <i class="zmdi zmdi-delete "></i>
+                        </a>
+                    </div>
+                                                        </div>
+                                <div class="col l3 m6 s6">
+                    <div class="wardrobe_column_wrapper w-100"> <a href="https://borrowmyne.softuvo.xyz/view-product/5ec7bc82b38edb308e4f6e89" class="wardrobe_column_main">
+                                                        <div class="wardrobe_column_image w-100">
+                                <img src="/images/1590149141.images.jpeg" alt="Image" />
+                            </div>
+                            
+                            <span class="ward_wishlist"><i class="zmdi zmdi-favorite-outline"></i></span>
+                            <div class="wardrobe_profile">
+                                                                                                <img src="/frontent/images/work6.png" id="user-image-upload">
+                                                                                            </div>
+                            <div class="wardrobe_content w-100">
+                                                                <h3 class="text-uppercase">Aje</h3>
+                                                                <p><span class="left">qqqq</span><span class="right">(0)
+                                        <span class="wardrobe_rating">
+                                                                                                                                          <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                        </span>
+                                    </span></p>
+                                    <h4><strong>
+                                            &pound;145.00
+                                            Rent</strong> <small>(£ 4,444.00 RRP)</small>
+                                    </h4>
+                                <!-- <h4><strong>&pound;145.00</strong> 
+                                Rent</strong<small>(&pound;4,444.00 RRP)</small> </h4> -->
+                            </div>
+                        </a>
+                    </div>
+                                                            <div class="center w-100 mt-20">
+
+                        <a href="/edit-list-item/5ec7bc82b38edb308e4f6e89" class="btn_verify">Edit The Item</a>
+                        <!-- <a href="https://borrowmyne.softuvo.xyz/delete-list-item" class="trash-icon" href="javascript:void(0)" onclick="event.preventDefault();
+                        document.getElementById('5ec7bc82b38edb308e4f6e89deletProduct').submit();">
+                            <i class="zmdi zmdi-delete"></i>
+                        </a> -->
+                        <a href="#delete_modal" class="modal-trigger trash-icon AddProductId" data-productIDDelete="5ec7bc82b38edb308e4f6e89">
+                            <i class="zmdi zmdi-delete "></i>
+                        </a>
+                    </div>
+                                                        </div>
+                                <div class="col l3 m6 s6">
+                    <div class="wardrobe_column_wrapper w-100"> <a href="https://borrowmyne.softuvo.xyz/view-product/5ec64cefb38edb3b756b6cc3" class="wardrobe_column_main">
+                                                        <div class="wardrobe_column_image w-100">
+                                <img src="/images/1590054076.images.jpeg" alt="Image" />
+                            </div>
+                            
+                            <span class="ward_wishlist"><i class="zmdi zmdi-favorite-outline"></i></span>
+                            <div class="wardrobe_profile">
+                                                                                                <img src="/frontent/images/work6.png" id="user-image-upload">
+                                                                                            </div>
+                            <div class="wardrobe_content w-100">
+                                                                <h3 class="text-uppercase">Acler</h3>
+                                                                <p><span class="left">new Item</span><span class="right">(0)
+                                        <span class="wardrobe_rating">
+                                                                                                                                          <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                        </span>
+                                    </span></p>
+                                    <h4><strong>
+                                            &pound;67.00
+                                            Rent</strong> <small>(£ 175.00 RRP)</small>
+                                    </h4>
+                                <!-- <h4><strong>&pound;67.00</strong> 
+                                Rent</strong<small>(&pound;175.00 RRP)</small> </h4> -->
+                            </div>
+                        </a>
+                    </div>
+                                                            <div class="center w-100 mt-20">
+
+                        <a href="/edit-list-item/5ec64cefb38edb3b756b6cc3" class="btn_verify">Edit The Item</a>
+                        <!-- <a href="https://borrowmyne.softuvo.xyz/delete-list-item" class="trash-icon" href="javascript:void(0)" onclick="event.preventDefault();
+                        document.getElementById('5ec64cefb38edb3b756b6cc3deletProduct').submit();">
+                            <i class="zmdi zmdi-delete"></i>
+                        </a> -->
+                        <a href="#delete_modal" class="modal-trigger trash-icon AddProductId" data-productIDDelete="5ec64cefb38edb3b756b6cc3">
+                            <i class="zmdi zmdi-delete "></i>
+                        </a>
+                    </div>
+                                                        </div>
+                                <div class="col l3 m6 s6">
+                    <div class="wardrobe_column_wrapper w-100"> <a href="https://borrowmyne.softuvo.xyz/view-product/5ea95f11b38edb6f2347efe3" class="wardrobe_column_main">
+                                                        <div class="wardrobe_column_image w-100">
+                                <img src="/images/1590148052.download.jpeg" alt="Image" />
+                            </div>
+                            
+                            <span class="ward_wishlist"><i class="zmdi zmdi-favorite-outline"></i></span>
+                            <div class="wardrobe_profile">
+                                                                                                <img src="/frontent/images/work6.png" id="user-image-upload">
+                                                                                            </div>
+                            <div class="wardrobe_content w-100">
+                                                                <h3 class="text-uppercase">Aja designer</h3>
+                                                                <p><span class="left">Product</span><span class="right">(0)
+                                        <span class="wardrobe_rating">
+                                                                                                                                          <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                        </span>
+                                    </span></p>
+                                    <h4><strong>
+                                            &pound;132.00
+                                            Rent</strong> <small>(£ 400.00 RRP)</small>
+                                    </h4>
+                                <!-- <h4><strong>&pound;132.00</strong> 
+                                Rent</strong<small>(&pound;400.00 RRP)</small> </h4> -->
+                            </div>
+                        </a>
+                    </div>
+                                                            <div class="center w-100 mt-20">
+
+                        <a href="/edit-list-item/5ea95f11b38edb6f2347efe3" class="btn_verify">Edit The Item</a>
+                        <!-- <a href="https://borrowmyne.softuvo.xyz/delete-list-item" class="trash-icon" href="javascript:void(0)" onclick="event.preventDefault();
+                        document.getElementById('5ea95f11b38edb6f2347efe3deletProduct').submit();">
+                            <i class="zmdi zmdi-delete"></i>
+                        </a> -->
+                        <a href="#delete_modal" class="modal-trigger trash-icon AddProductId" data-productIDDelete="5ea95f11b38edb6f2347efe3">
+                            <i class="zmdi zmdi-delete "></i>
+                        </a>
+                    </div>
+                                                        </div>
+                                <div class="col l3 m6 s6">
+                    <div class="wardrobe_column_wrapper w-100"> <a href="https://borrowmyne.softuvo.xyz/view-product/5ea3f0cfb38edb32515fa904" class="wardrobe_column_main">
+                                                        <div class="wardrobe_column_image w-100">
+                                <img src="/images/1587802316.webp" alt="Image" />
+                            </div>
+                            
+                            <span class="ward_wishlist"><i class="zmdi zmdi-favorite-outline"></i></span>
+                            <div class="wardrobe_profile">
+                                                                                                <img src="/frontent/images/work6.png" id="user-image-upload">
+                                                                                            </div>
+                            <div class="wardrobe_content w-100">
+                                                                <h3 class="text-uppercase">Camilla</h3>
+                                                                <p><span class="left">Gown</span><span class="right">(0)
+                                        <span class="wardrobe_rating">
+                                                                                                                                          <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                                  <i class="zmdi zmdi-star-outline"></i>
+                                                                                                                                                                                        </span>
+                                    </span></p>
+                                    <h4><strong>
+                                            &pound;358.00
+                                            Rent</strong> <small>(£ 1,200.00 RRP)</small>
+                                    </h4>
+                                <!-- <h4><strong>&pound;358.00</strong> 
+                                Rent</strong<small>(&pound;1,200.00 RRP)</small> </h4> -->
+                            </div>
+                        </a>
+                    </div>
+                                                            <div class="center w-100 mt-20">
+
+                        <a href="/edit-list-item/5ea3f0cfb38edb32515fa904" class="btn_verify">Edit The Item</a>
+                        <!-- <a href="https://borrowmyne.softuvo.xyz/delete-list-item" class="trash-icon" href="javascript:void(0)" onclick="event.preventDefault();
+                        document.getElementById('5ea3f0cfb38edb32515fa904deletProduct').submit();">
+                            <i class="zmdi zmdi-delete"></i>
+                        </a> -->
+                        <a href="#delete_modal" class="modal-trigger trash-icon AddProductId" data-productIDDelete="5ea3f0cfb38edb32515fa904">
+                            <i class="zmdi zmdi-delete "></i>
+                        </a>
+                    </div>
+                                                        </div>
+                
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+  
+<!-- FOOTER STARTS HERE -->
+
+<section class="footer">
+  <div class="footer_upper_section w-100">
+    <div class="row">
+      <div class="col l12 m12 s12 no-padding">
+        <div class="footer_upper_column footer_upper_column_left center">
+          <div class="footer_upper_column_wrapper center">
+
+            <div class="col l6 offset-l3 m12 s12 no-padding">
+
+              <h3>Stay on Trend and receive the <br />
+                latest on demand deals</h3>
+              <form class="search_field" method="POST" action="https://borrowmyne.softuvo.xyz/SubscribeMail" id="newsletterForm">
+                <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">                <input type="email" name="email" placeholder="Enter your email address" />
+                                <button type="submit" class="common_btn waves-effect">Yes please</button>
+              </form>
+              <ul class="social_links center w-100">
+                                <li><a href="https://fb.com" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com" target="_blank"><i class="zmdi zmdi-instagram"></i></a></li>
+                                                <li><a href="https://pinterest.com" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
+                
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col l6 m6 s12 no-padding">
+        <div class="footer_upper_column footer_upper_column_right center">
+          <div class="footer_upper_column_wrapper center">
+            <h3>Download Borrow Myne App now</h3>
+            <div class="download_btns center"> <a href="https://www.apple.com/in/ios/app-store/" target="_blank"><img src="images/app_btn.png" alt="Image"/></a>
+              <div class="clearfix"></div>
+              <a href="https://play.google.com/store?hl=en" target="_blank"><img src="images/google_btn.png" alt="Image"/></a> </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="footer_middle_section w-100">
+    <div class="container">
+      <div class="row">
+        <div class="col l5 m5 s12 left footer_column hide-on-small-only">
+          <!-- <img src="/frontent/images/cards_img.png" alt="Image" />  -->
+        </div>
+        <div class="col l4 m4 s12 left footer_column">
+          <ul>
+            <li><a href="https://borrowmyne.softuvo.xyz/rental">Rental Companies</a></li>
+            <li><a href="https://borrowmyne.softuvo.xyz/privacy-policy">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="col l3 m3 s12 left-align footer_column">
+          <ul>
+            <li><a href="https://borrowmyne.softuvo.xyz/howitwork">How It Works</a></li>
+            <li><a href="https://borrowmyne.softuvo.xyz/faq">Help And Faqs </a></li>
+            <li><a href="https://borrowmyne.softuvo.xyz/contactus">Contact us </a></li>
+            <li><a href="https://borrowmyne.softuvo.xyz/terms-conditions">Terms And Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright w-100">
+    <div class="container">
+      <div class="row">
+        <div class="col l12 m12 s12 center">
+          <p>© 2019 BorrowMyne All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER STARTS HERE -->
+
+<!-- ALL POPUP HERE -->
+
+<!-- ACCEPT BOOKING POPUP STARTS HERE-->
+<div id="accept_booking" class="modal booking_popup common_popup">
+  <div class="modal-content center">
+    <h3>Confirm Booking ?</h3>
+
+    <p> <span id="acceptBookingLenderName"> </span> will be notified by email of booking status. </p>
+
+    <a class="modal-close waves-effect waves-green common_btn accept_booking acceptBooking">Yes</a>
+    <input type="hidden" id="orderproductHidden">
+    <input type="hidden" id="orderuserHidden">
+    <input type="hidden" id="orderuseremailHidden">
+    <a class="modal-close waves-effect waves-red common_btn reject_booking ">No</a>
+  </div>
+</div>
+<!-- ACCEPT BOOKING POPUP ENDS HERE-->
+
+<!-- REJECT BOOKING POPUP STARTS HERE-->
+<div id="reject_booking" class="modal booking_popup common_popup">
+  <div class="modal-content center">
+    <h3>Are you sure ?</h3>
+    <p>You wish to reject booking request?</p>
+    <a class="modal-close waves-effect waves-green common_btn accept_booking rejectBooking">Yes</a>
+    <a class="modal-close waves-effect waves-red common_btn reject_booking">No</a>
+  </div>
+</div>
+<!-- REJECT BOOKING POPUP ENDS HERE-->
+
+<input type="button" id="checkout_thankyouPopup" style="display:none" data-target="checkout_thankyou" value="join" class="common_btn modal-trigger action-button submit_btn mt-20 verifyPopup">
+
+<!-- Checkout Thankyou POPUP STARTS HERE-->
+<!-- Checkout Thankyou POPUP ENDS HERE-->
+<!-- LIST ITEM CONGRATS POPUP STARTS HERE-->
+<div id="list_thankyou" class="modal booking_popup common_popup list_popup">
+  <div class="modal-content center">
+    <h3 class="text-uppercase">Congratulations</h3>
+    <p><span>Your item is now live!</span></p>
+    <a class="modal-close waves-effect waves-green common_btn accept_booking" href="https://borrowmyne.softuvo.xyz/user-profile/5ea3d17ab38edb34436a12b2">Ok</a>
+  </div>
+</div>
+<!-- LIST ITEM CONGRATS POPUP STARTS HERE-->
+
+<!-- CHECK CALENDAR POPUP STARTS HERE-->
+<div id="check_calendar" class="modal common_popup full_calendar_modal">
+  <div class="modal-content center">
+    <div class="close modal-close"><i class="zmdi zmdi-close"></i></div>
+    <div class="check_calendar_popup w-100">
+      <div class="row">
+        <div class="col l9 m8 s12 calendar_left">
+          <div id='rescalnder'></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- CHECK CALENDAR POPUP ENDS HERE-->
+
+<!-- DELETE ITEM POPUP STARTS HERE-->
+<!-- <div id="delete_modal" class="modal delete_popup">
+  <div class="modal-content center">
+    <p class="right-align modal-close"><i class="zmdi zmdi-close"></i></p>
+    <p><span>Are you sure you wish to delete listing?</span></p>
+    <a href="list-item.php" class=" waves-effect waves-green common_btn accept_booking yes left " onclick="event.preventDefault();
+       document.getElementById('deletProductUser ').submit();">Yes</a>
+
+    <form id="deletProductUser " action="https://borrowmyne.softuvo.xyz/delete-list-item" method="POST" style="display: none;">
+      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">      <input type="hidden" name="productId" id="AddproductIDDelete" value="">
+    </form>
+    <a class="modal-close waves-effect waves-red common_btn accept_booking no left">No</a>
+  </div>
+</div> -->
+
+<div id="delete_modal" class="modal booking_popup common_popup link_update w-100 center">
+  <div class="modal-content">
+    <h3 class="w-100 center" style="text-transform:uppercase">Are you sure you wish to delete listing?</h3>
+    <a href="list-item.php" class=" waves-effect waves-green common_btn accept_booking yes mt-10" onclick="event.preventDefault();
+       document.getElementById('deletProductUser ').submit();">Yes</a>
+    <a class="modal-close waves-effect waves-red common_btn accept_booking no mt-10">No</a>
+    <form id="deletProductUser " action="https://borrowmyne.softuvo.xyz/delete-list-item" method="POST" style="display: none;">
+      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">      <input type="hidden" name="productId" id="AddproductIDDelete" value="">
+    </form>
+  </div>
+</div>
+
+
+
+<div id="delete_modal1" class="modal booking_popup common_popup link_update w-100 center">
+  <div class="modal-content">
+    <h3 class="w-100 center">Hide your items from Borrowers whilst you are out of office</h3>
+    <a href="list-item.php" class=" waves-effect waves-green common_btn accept_booking yes mt-10" onclick="event.preventDefault();
+       document.getElementById('holidayModeOnUser ').submit();">Yes</a>
+    <a class="modal-close waves-effect waves-red common_btn accept_booking no mt-10">No</a>
+    <form id="holidayModeOnUser " action="https://borrowmyne.softuvo.xyz/holidayModeUser" method="POST" style="display: none;">
+      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">      <input type="hidden" name="userId" id="holidayModeUserID" value="">
+    </form>
+  </div>
+</div>
+
+
+<div id="delete_modal2" class="modal booking_popup common_popup link_update w-100 center">
+  <div class="modal-content">
+    <h3 class="w-100 center">Make All Listings Live</h3>
+    <a href="list-item.php" class=" waves-effect waves-green common_btn accept_booking yes mt-10" onclick="event.preventDefault();
+       document.getElementById('holidayModeOffUser ').submit();">Yes</a>
+    <a class="modal-close waves-effect waves-red common_btn accept_booking no mt-10">No</a>
+    <form id="holidayModeOffUser " action="https://borrowmyne.softuvo.xyz/holidayModeUserOff" method="POST" style="display: none;">
+      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">      <input type="hidden" name="userId" id="holidayModeUserID" value="">
+    </form>
+  </div>
+</div>
+
+<!-- DELETE ITEM POPUP STARTS HERE-->
+
+
+
+
+<div id="cancel_req" class="modal booking_popup common_popup link_update w-100 center">
+  <div class="modal-content">
+    <h3 class="w-100 center">Are you sure you wish to Cancel?</h3>
+    <p>You may be subject to <a href="https://borrowmyne.softuvo.xyz/terms-conditions">cancellation fees</a></p>
+
+    <a href="https://borrowmyne.softuvo.xyz/cancelReservation" href="javascript:void(0)" class=" waves-effect waves-green common_btn accept_booking yes mt-10" onclick="event.preventDefault();
+                        document.getElementById('cancelReservation').submit();"> Yes</a>
+
+    <a class="modal-close waves-effect waves-red common_btn accept_booking no mt-10">No</a>
+    <form id="cancelReservation" action="https://borrowmyne.softuvo.xyz/cancelReservation" method="POST" style="display: none;">
+      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">      <!-- <input type="hidden" name="productId" id="AddproductIDDelete" value=""> -->
+      <input type="hidden" name="userId" value="5ea3d17ab38edb34436a12b2">
+      <input type="hidden" name="orderId" value="" class="orderIdcancelOrderpopUP">
+      <input type="hidden" name="cencelType" class="cancelType">
+    </form>
+  </div>
+</div>
+
+<div id="cancel_req1" class="modal booking_popup common_popup link_update w-100 center">
+  <div class="modal-content">
+    <h3 class="w-100 center">Are you sure you wish to Cancel?</h3>
+    <p>You may be subject to <a href="https://borrowmyne.softuvo.xyz/terms-conditions">cancellation fees</a></p>
+
+    <a href="https://borrowmyne.softuvo.xyz/cancelOrder" href="javascript:void(0)" class=" waves-effect waves-green common_btn accept_booking yes mt-10" onclick="event.preventDefault();
+                        document.getElementById('cancelLender').submit();"> Yes</a>
+
+    <a class="modal-close waves-effect waves-red common_btn accept_booking no mt-10">No</a>
+    <form id="cancelLender" action="https://borrowmyne.softuvo.xyz/cancelOrder" method="POST" style="display: none;">
+      <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">      <!-- <input type="hidden" name="productId" id="AddproductIDDelete" value=""> -->
+      <input type="hidden" name="userId" value="5ea3d17ab38edb34436a12b2">
+      <input type="hidden" name="orderId" class="orderIdcancelOrderpopUP">
+      <input type="hidden" name="cencelType" class="cancelType">
+    </form>
+  </div>
+</div>
+
+
+<!-- ADD REVIEW POPUP STARTS HERE-->
+
+<!-- <div id="review_popup" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+
+    <div class="review_banner">
+      <img src="/frontent/images/review_banner.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/login_logo.png" alt="Logo" />
+        <h2 class="text-uppercase">Rate And Review</h2>
+      </div>
+    </div>
+
+    <div class="review_section_content w-100">
+
+      <div class="review_person center">
+        <img src="/frontent/images/profile1.jpg" alt="Image" />
+      </div>
+      <div class="review_section_text left-align">
+        <h3 class="text-uppercase">Kyle Megan</h3>
+        <p>Your review will be posted publicly on the web.</p>
+
+        <form class="w-100">
+          <span class="wardrobe_rating">
+            <input type="radio" id="star5a" name="rating" value="5" />
+            <label class="full" for="star5a"></label>
+            <input type="radio" id="star4halfa" name="rating" value="4 and a half" />
+            <label class="half" for="star4halfa"></label>
+            <input type="radio" id="star4a" name="rating" value="4" />
+            <label class="full" for="star4a"></label>
+            <input type="radio" id="star3halfa" name="rating" value="3 and a half" />
+            <label class="half" for="star3halfa"></label>
+            <input type="radio" id="star3a" name="rating" value="3" />
+            <label class="full" for="star3a"></label>
+            <input type="radio" id="star2halfa" name="rating" value="2 and a half" />
+            <label class="half" for="star2halfa"></label>
+            <input type="radio" id="star2a" name="rating" value="2" />
+            <label class="full" for="star2a"></label>
+            <input type="radio" id="star1halfa" name="rating" value="1 and a half" />
+            <label class="half" for="star1halfa"></label>
+            <input type="radio" id="star1a" name="rating" value="1" />
+            <label class="full" for="star1a"></label>
+            <input type="radio" id="starhalfa" name="rating" value="half" />
+            <label class="half" for="starhalfa"></label>
+          </span>
+          <textarea placeholder="Share details of your own experience at this place"></textarea>
+          <p><span>Attachment <i class="zmdi zmdi-attachment"></i> <input type="file" /></span></p>
+
+          <div class="review_popup_btns w-100 center">
+            <a class="modal-close waves-effect waves-red common_btn">Cancel</a>
+            <button type="submit" class="modal-close waves-effect waves-green common_btn ">post</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div> -->
+
+<!-- ADD REVIEW POPUP ENDS HERE-->
+
+<!-- MESSAGE BORROWER POPUP STARTS HERE-->
+
+<div id="borrower_popup" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+
+    <div class="review_banner">
+      <img src="/frontent/images/contact_lender.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/updateLogo.png" alt="Logo" />
+
+
+                <h2 class="text-uppercase">rishabtest103 </h2>
+        
+
+
+      </div>
+    </div>
+
+    <div class="review_section_content w-100">
+
+      <div class="review_section_text left-align">
+        <p>RE:  Gown </p>
+
+        <form class="w-100" method="POST" action="https://borrowmyne.softuvo.xyz/sendContactMail" id="sendNotificationContactUser">
+          <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">          <p>Message</p>
+          <textarea name="message" placeholder="Message body...."></textarea>
+
+                              <input type="hidden" name="productName" value="Gown">
+          <input type="hidden" name="ToName" value="rishabtest103">
+          <input type="hidden" name="To" value="5ea3d17ab38edb34436a12b2">
+          <input type="hidden" name="ToEmail" value="rishabtest01@yopmail.com">
+          <input type="hidden" name="FromName" value="rishabtest103">
+          <input type="hidden" name="FromEmail" value="rishabtest01@yopmail.com">
+          <input type="hidden" name="productId" value="5ea3f0cfb38edb32515fa904">
+                              <!-- <p><span>Attachment <i class="zmdi zmdi-attachment"></i> <input type="file"/></span></p> -->
+
+          <div class="review_popup_btns w-100 center">
+            <a class="modal-close waves-effect waves-red common_btn">Cancel</a>
+            <button type="submit" class=" waves-effect waves-green common_btn "> Send</button>
+            <!--   <a type="submit" class="modal-close waves-effect waves-green common_btn modal-trigger" href="#message_popup">send</a> -->
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<!-- MESSAGE BORROWER POPUP ENDS HERE-->
+
+<div id="rental_borrower_popup" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+
+    <div class="review_banner">
+      <img src="/frontent/images/contact_lender.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/updateLogo.png" alt="Logo" />
+        <h2 class="text-uppercase" id="ResBorrowerName"> </h2>
+      </div>
+    </div>
+
+    <div class="review_section_content w-100">
+
+      <div class="review_section_text left-align">
+        <p>RE: <span id="ResProductName"></span></p>
+        <form class="w-100 " method="POST" action="https://borrowmyne.softuvo.xyz/sendMessagereser" id="sendNotificationContactUserRes">
+          <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">          <p>Messages</p>
+          <textarea name="message" placeholder="Message body...."></textarea>
+
+          <input type="hidden" id="fromMailRes" name="From" value="">
+          <input type="hidden" id="fromNameRes" name="FromName" value="">
+          <input type="hidden" id="ToEmailRes" name="To" value="">
+          <input type="hidden" id="ToNameRes" name="ToName" value="">
+          <input type="hidden" id="productNameRes" name="productName" value="">
+          <input type="hidden" id="productId" name="productId" value="">
+
+          <div class="review_popup_btns w-100 center">
+            <a class="modal-close waves-effect waves-red common_btn">Cancel</a>
+            <button type="submit" class=" waves-effect waves-green common_btn "> Send</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<!-- RENTAL BORROWER POPUP STARTS HERE-->
+
+
+
+<!-- RENTAL BORROWER POPUP ENDS HERE-->
+
+
+
+
+
+<!-- ACCEPT BOOKING POPUP STARTS HERE-->
+<div id="add_link" class="modal booking_popup common_popup link_update">
+  <div class="modal-content">
+    <h3 class="center">Share Wardrobe</h3>
+    <form class="w-100 common_form account_form">
+      <div class="input-field col m6 l6 s12">
+        <label class="w-100">Copy Link </label>
+        <input id="shareLinkModal" class="validate form-control" type="text" value="" readonly>
+      </div>
+      <div class="center">
+        <a class="common_btn waves-effect send_rqst modal-close" href="">Share</a>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- ACCEPT BOOKING POPUP ENDS HERE-->
+
+
+<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+
+
+<!-- ALL POPUP ENDS HERE -->
+
+<!--JavaScript at end of body for optimized loading-->
+<script src="/frontent/js/jquery3-3-1.js"></script>
+<script src="/frontent/js/jquery-migrate-1-4-1.js"></script>
+<!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+<script type="text/javascript" src="/frontent/js/materialize.min.js"></script>
+
+
+<script>
+  $(document).ready(function() {
+    $('.tooltipped').tooltip();
+  });
+</script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+<!--   Form validation !-->
+<script src="/assets/libs/jquery/dist/jquery.validate.min.js"></script>
+<script src="/assets/libs/jquery/dist/additional-methods.min.js"></script>
+<!--masonry JavaScript -->
+<script src="/frontent/js/masonry.js"></script>
+<script src="/frontent/js/main.js"></script>
+<script src="/frontent/js/typed.js" type="text/javascript"></script>
+<script src="/frontent/js/nouislider.js"></script>
+<script src="/frontent/js/lightslider.js"></script>
+<script type="text/javascript" src="/frontent/js/jquery_zoom.js"></script>
+<script src='/frontent/js/moment.min.js'></script>
+<script src='/frontent/js/fullcalendar.js'></script>
+<script type="text/javascript" src="/frontent/js/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="/frontent/js/easing.js"></script>
+<script type="text/javascript" src="/frontent/js/multistep.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.6/mediaelement-and-player.min.js"> </script>
+<script type="text/javascript" src="/frontent/js/airplay.js"></script>
+
+<script type="text/javascript" src="/frontent/js/custom.js"></script>
+
+<script type="text/javascript">
+  $('video').mediaelementplayer({
+    // Configuration
+    success: function(media) {
+      var isNative = /html5|native/i.test(media.rendererName);
+
+      var isYoutube = ~media.rendererName.indexOf('youtube');
+
+    }
+  });
+
+  new MediaElementPlayer('player2', {
+    features: ['playpause', 'current', 'progress', 'duration', 'volume', 'fullscreen', 'airplay'],
+  });
+</script>
+
+<input type="button" id="signinPopup" style="display:none" data-target="signup_popup" value="join" class="common_btn modal-trigger action-button submit_btn mt-20 verifyPopup">
+
+<div id="signup_popup" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+
+    <div class="review_banner">
+      <img src="/frontent/images/register_bg.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/login_logo.png" alt="Logo" />
+      </div>
+    </div>
+        </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<input type="button" id="message_popup" style="display:none" data-target="messagepopup" value="join" class="common_btn modal-trigger action-button submit_btn mt-20">
+
+<!-- message BOOKING POPUP STARTS HERE-->
+<div id="messagepopup" class="modal booking_popup common_popup link_update">
+  <div class="modal-content center">
+        <p>Message has been sent to <br> <b> <span class="text-uppercase user_name mt-10 w-100">rishabtest103</span> </b></p>
+
+    
+    <div class="center">
+      <a class="common_btn waves-effect modal-close" href="">Ok</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="verified_popup" class="modal booking_popup common_popup link_update">
+  <div class="modal-header">
+    <a href="" class="modal-close waves-effect waves-green btn-flat">
+      <div class="close"><i class="zmdi zmdi-close"></i></div>
+    </a>
+  </div>
+  <div class="modal-content center">
+    <p>Verify your Identity<br> <b> <span class="text-uppercase user_name mt-10 w-100"></span> </b></p>
+    <p>For best results, please verify your identity on a camera phone</p>
+    <br>
+    <div class="center">
+      <form method="POST" action="https://borrowmyne.softuvo.xyz/accountVerifyRegistration" class="verified_account" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">        <div class="user_deatil">
+
+          <input type="hidden" name="verifiedID" class="verifiedID" value="">
+          <input type="text" name="verified_name" placeholder="First Name" readonly class="verified_name" value="">
+          <input type="text" name="verified_last" placeholder="Last Name" readonly class="verified_last" value="">
+          <input type="text" name="verified_em" placeholder="Email" readonly class="verified_em" value="">
+          <input type="text" name="verified_ph" placeholder="Phone Number" readonly class="verified_ph" value="">
+        </div>
+        <input type="submit" class="verifed_account" id="VerifyAccount" value="Submit">
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- ADD REVIEW POPUP STARTS HERE-->
+
+<div id="review_popup" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+
+    <div class="review_banner">
+      <img src="/frontent/images/review_banner.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/login_logo.png" alt="Logo" />
+        <h2 class="text-uppercase">Rate And Review</h2>
+      </div>
+    </div>
+
+    <div class="review_section_content w-100">
+
+      <div class="review_person center">
+        <img src="/frontent/images/profile1.jpg" alt="Image" />
+      </div>
+      <div class="review_section_text left-align">
+        <h3 class="text-uppercase">Kyle Megan</h3>
+        <p>Your review will be posted publicly on the web.</p>
+
+        <form class="w-100">
+          <span class="wardrobe_rating">
+            <input type="radio" id="star5a" name="rating" value="5" />
+            <label class="full" for="star5a"></label>
+            <input type="radio" id="star4halfa" name="rating" value="4 and a half" />
+            <label class="half" for="star4halfa"></label>
+            <input type="radio" id="star4a" name="rating" value="4" />
+            <label class="full" for="star4a"></label>
+            <input type="radio" id="star3halfa" name="rating" value="3 and a half" />
+            <label class="half" for="star3halfa"></label>
+            <input type="radio" id="star3a" name="rating" value="3" />
+            <label class="full" for="star3a"></label>
+            <input type="radio" id="star2halfa" name="rating" value="2 and a half" />
+            <label class="half" for="star2halfa"></label>
+            <input type="radio" id="star2a" name="rating" value="2" />
+            <label class="full" for="star2a"></label>
+            <input type="radio" id="star1halfa" name="rating" value="1 and a half" />
+            <label class="half" for="star1halfa"></label>
+            <input type="radio" id="star1a" name="rating" value="1" />
+            <label class="full" for="star1a"></label>
+            <input type="radio" id="starhalfa" name="rating" value="half" />
+            <label class="half" for="starhalfa"></label>
+          </span>
+          <textarea placeholder="Share details of your own experience at this place"></textarea>
+          <p><span>Attachment <i class="zmdi zmdi-attachment"></i> <input type="file" /></span></p>
+
+          <div class="review_popup_btns w-100 center">
+            <a class="modal-close waves-effect waves-red common_btn">Cancel</a>
+            <button type="submit" class="modal-close waves-effect waves-green common_btn ">post</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="add_review" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+    <div class="review_banner">
+      <img src="/frontent/images/review_banner.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/login_logo.png" alt="Logo" />
+        <h2 class="text-uppercase">Rate And Review</h2>
+      </div>
+    </div>
+
+    <div class="review_section_content w-100">
+
+      <div class="review_person center">
+        <img src="/frontent/images/profile1.jpg" id="imageID" alt="Image" />
+      </div>
+      <div class="review_section_text left-align">
+        <h3 class="text-uppercase" id="Review_Name"></h3>
+        <p>Your review will be posted publicly on the web.</p>
+        <form method="POST" action="/addreview/" class="searchCommon">
+          <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">          <input type="hidden" name="UserID" value="" id="Review_UserID">
+
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="review_rating" value="5">
+            <label class="full" for="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half" name="review_rating" value="4.5">
+            <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4" name="review_rating" value="4">
+            <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half" name="review_rating" value="3.5">
+            <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3" name="review_rating" value="3">
+            <label class="full" for="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half" name="review_rating" value="2.5">
+            <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2" name="review_rating" value="2">
+            <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half" name="review_rating" value="1.5">
+            <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1" name="review_rating" value="1">
+            <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf" name="review_rating" value="0.5">
+            <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+          </fieldset>
+
+          <textarea name="review" rows="4" cols="50"></textarea>
+          <div class="review_popup_btns w-100 center">
+            <a class="modal-close waves-effect waves-red common_btn">Cancel</a>
+            <button type="submit" class="modal-close waves-effect waves-green common_btn ">post</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal Structure -->
+<div id="btn_genrate_label" class="modal booking_popup common_popup review_popup_section">
+  <div class="modal-content center">
+    <div class="review_banner">
+      <img src="/frontent/images/review_banner.jpg" alt="Image" />
+      <div class="review_banner_wrapper">
+        <img src="/frontent/images/login_logo.png" alt="Logo" />
+        <h2 class="text-uppercase">New Label</h2>
+      </div>
+    </div>
+
+    <div class="review_section_content w-100">
+      <div class="review_section_text left-align">
+        <h3 class="text-uppercase" id="Review_Name"></h3>
+        <p></p>
+        <form method="POST" action="/new_label/" class="newlabel">
+          <input type="hidden" name="_token" value="UNN2RdWlvTmQQK8tux2ArmDqHhcOJZ1PDRD3F4Wy">          <input type="hidden" name="UserID" value="" id="UserID">
+          <input type="hidden" name="orderid" value="" id="orderid">
+          <input type="text" class="datepicker" placeholder="Select Date" name="labelseclect" id="labelseclect">
+          <div class="review_popup_btns w-100 center">
+            <a class="modal-close waves-effect waves-red common_btn">Cancel</a>
+            <button type="submit" class="modal-close waves-effect waves-green common_btn ">post</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<script>
+  $(document).ready(function() {
+
+    $('.verified_account input[name="verified_ph"]').on('keypress', function(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode > 31 && (charCode <= 45 || charCode > 57)) {
+        return false;
+      }
+      return true;
+    });
+    // dorpdown js
+
+    $('.dropdown-trigger').dropdown();
+
+    // nav js
+    //$('.sidenav').sidenav();
+
+    // close sidenav on click anchor
+
+    $('.sidenav ul li a').click(function() {
+      $('.sidenav').toggle();
+      $('.sidenav-overlay').css({
+        "display": "none",
+        "opacity": "0"
+      });
+      $('body').css("overflow", "auto");
+    });
+    $('.sidenav-trigger').click(function() {
+      $('.sidenav').css({
+        "display": "table",
+        "transform": "translateX(0%)"
+      });
+    });
+    $('.sidenav-close').click(function() {
+      $('.sidenav').css({
+        "display": "none",
+        "transform": "translateX(0%)"
+      });
+    });
+
+
+    // for view product page
+
+    $('.view_list_features.item_request_price ul li').click(function() {
+      $ //(this).addClass('list_active');
+      $(this).siblings().removeClass('list_active');
+      $(this).addClass('list_active');
+    });
+
+
+    // modal js
+    $('.modal').modal();
+
+    // select js
+
+    $('select').formSelect();
+
+    // tabing js
+
+    $('.tabs').tabs();
+
+    $('#additionalDatepicker').datepicker();
+    $('#labelseclect').datepicker({
+      onOpen: function() {
+        var instance = M.Datepicker.getInstance($('#labelseclect'));
+        instance.options.format = "dd/mm/yyyy";
+        instance.options.minDate = new Date();
+        instance.options.firstDay = 1
+      },
+    });
+
+
+    function additionalchangeDate(dateText, selectEl, firsDay, firstdate) {
+      additionalCheckOldRemove();
+      console.log(firstdate)
+      var Datecheck = moment(dateText.toISOString()).format("DD/MM/YYYY");
+      dateText = moment(dateText, "DD-MM-YYYY");
+      if (moment(firstdate).endOf('month').format('D') == moment(firstdate).format("D")) {
+        let tomorrow = moment(firstdate).add(1, 'days');
+        var firsDay = moment(tomorrow).format("D")
+        var Month = parseInt(moment(tomorrow).format("M")) - 1;
+      } else {
+        var firsDay = parseInt(parseInt(moment(firstdate).format("D")) + 1)
+        var Month = parseInt(moment(firstdate).format("M")) - 1;
+      }
+      var day = moment(dateText.toISOString()).format("D");
+      $el = selectEl.closest('tbody').find('tr td[data-day="' + day + '"] button[data-month="' + Month + '"]');
+      var LstDate = moment(dateText.toISOString()).format("DD/MM/YYYY");
+      var fDay = moment(dateText).format("D");
+      if ($el.length == 0) {
+        day = moment(dateText).endOf('month').format('D');
+      }
+      var Year = moment(dateText.toISOString()).format("YYYY")
+      for (var i = firsDay; i <= parseInt(day); i++) {
+        var abc = new Date(Year, Month, i).toDateString();
+        console.log(i);
+        console.log(jQuery.inArray(abc, disableListDate));
+        if (jQuery.inArray(abc, disableListDate) != -1) {
+          $('td button[data-day="' + i + '"][data-month="' + Month + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false');
+          alert('Sorry! Choose other date')
+          console.log($('td.is-selected').length);
+          if ($('td.is-selected').length > 0) {
+            $('td').removeClass('is-selected').attr('aria-selected', 'false');
+          }
+          return;
+
+        }
+        $('td button[data-day="' + i + '"][data-month="' + (Month) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+      }
+      $('#alladdlastDate').val(LstDate);
+      return LstDate;
+
+    }
+
+
+    function additionalCheckOldRemove() {
+      var el = $("#alladdlastDate");
+      var lst = $('#lastDate').attr('checkvalue');
+      lst = (lst !== undefined) ? lst.split("-") : '';
+      var fst = el.attr('addcheckvalue')
+      fst = (fst !== undefined) ? fst.split("-") : '';
+
+      if (el.hasClass('check') == true && fst[0] !== lst[1]) {
+        str = $("#alladdlastDate").attr('addcheckvalue');
+        str[0] = moment(str[0], "DD-MM-YYYY");
+        str[1] = moment(str[1], "DD-MM-YYYY");
+        var fDay = moment(str[0]).format("D");
+        var lDay = moment(str[1]).format("D");
+        var Month = moment(str[1]).format("M");
+
+        $el = $('tbody').find('tr td[data-day="' + lDay + '"] button[data-month="' + (Month - 1) + '"]');
+        if ($el.length == 0) {
+          lDay = moment(str[0]).endOf('month').format('D');
+        }
+        for (var i = parseInt(fDay); i <= parseInt(lDay); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (Month - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+        }
+        $("#alladdlastDate").removeClass('check')
+      }
+    }
+
+
+
+    function disableDates() {
+
+      var addfirstday = $("#alladdlastDate").attr('addfirstday');
+      var addlastday = moment(moment($("#alladdlastDate").attr('addlastday'), 'DD-MM-YYYY')).add(1, 'days').format("DD/MM/YYYY");
+      var iptalTarih = [];
+      var gap = moment(moment($("#alladdlastDate").attr('addlastday'), 'DD-MM-YYYY')).format("D") - moment(moment($("#alladdlastDate").attr('addfirstday')).startOf('month'), 'DD-MM-YYYY').format("D");
+      var year = moment(moment($("#alladdlastDate").attr('addfirstday'), 'DD-MM-YYYY')).startOf('month').format("YYYY");
+      var month = moment(moment($("#alladdlastDate").attr('addfirstday'), 'DD-MM-YYYY')).startOf('month').format("M");
+      var day = moment(moment($("#alladdlastDate").attr('addfirstday'), 'DD-MM-YYYY')).startOf('month').format("D");
+      if (addfirstday == undefined || addlastday == undefined) {
+        var str = $("#selectDates").val();
+        var str = str.split("-");
+        str[0] = moment(str[0], "DD-MM-YYYY");
+        str[1] = moment(str[1], "DD-MM-YYYY");
+        var fDay = moment(str[0]).startOf('month').format("D");
+        var lDay = moment(str[1]).format("D");
+        var Month = moment(str[1]).format("M");
+        gap = lDay - fDay;
+        year = moment(str[0]).startOf('month').format("YYYY");
+        month = moment(str[0]).startOf('month').format("M");
+        day = moment(str[0]).startOf('month').format("D");
+
+      }
+      for (var i = 0; i <= parseInt(gap); i++) {
+        var toDate = new Date(year, month, parseInt(day) + i);
+        iptalTarih.push(toDate);
+      }
+      for (var i = 0; i < iptalTarih.length; i++) {
+        var
+          fullDisabledDate = new Date(iptalTarih[i]),
+          getDisabledMonth = fullDisabledDate.getMonth() - 1,
+          getDisabledDay = fullDisabledDate.getDate(),
+          getDisabledYear = fullDisabledDate.getFullYear();
+        $('td button[data-year="' + getDisabledYear + '"][data-month="' + getDisabledMonth + '"][data-day="' + getDisabledDay + '"]').parent('td').addClass('is-disabled');
+      }
+    }
+
+
+    $('#additionalDaySelect').datepicker({
+
+      onSelect: function(dateText) {
+        var firsDay = dateText.getDate().toString();
+        if ($("#selectDates").val().length > 0) {
+          firsDay = firsDay.length > 1 ? firsDay : firsDay;
+          var firstdate = moment(moment($("#alladdlastDate").attr('addlastday'), 'DD-MM-YYYY'));
+          console.log(firstdate)
+          var selectEl = $('.datepicker-table .datepicker-row td.is-selected');
+          additionalchangeDate(dateText, selectEl, firsDay, firstdate);
+        }
+
+
+      },
+      onClose: function(dateText) {
+        if ($("#selectDates").val().length > 0) {
+          var LastDate = ($("#alladdlastDate").val() == '' || $("#alladdlastDate").val() == undefined) ? $("#additionalDaySelect").attr('ad_lastdate') : $("#alladdlastDate").val();
+          var firstdate = moment(moment($("#alladdlastDate").attr('addlastday'), 'DD-MM-YYYY')).add(1, 'days').format("DD/MM/YYYY");
+          $('#alladdlastDate').addClass('check').attr('addcheckvalue', firstdate + '-' + $("#alladdlastDate").val())
+          if ($("#additionalDaySelect").val() !== '' && $('#additionalDaySelect').val() !== undefined) {
+            $("#additionalDaySelect").val(firstdate + '-' + LastDate);
+          } else {
+            $("#additionalDaySelect").val(firstdate + '-' + $("#additionalDaySelect").attr('ad_lastdate'));
+          }
+          $('.datepicker-cancel').on('click', function(el) {
+
+            if ($("#additionalDaySelect").val() !== '' && $('#additionalDaySelect').val() !== undefined) {
+              str = $('#additionalDaySelect').val();
+              str = str.split("-");
+              if (str[0] !== '' && str[1] !== '') {
+                $("#additionalDaySelect").val(str[0] + '-' + str[1]);
+                $('#alladdlastDate').addClass('check').attr('addcheckvalue', str[0] + '-' + str[1])
+              } else {
+                $("#additionalDaySelect").val('');
+                $('#alladdlastDate').addClass('check').attr('addcheckvalue', '')
+              }
+            }
+          });
+        }
+
+      },
+      disableDayFn: function(date) {
+
+        if ($('input[name="BlockDate"]').length > 0) {
+          var BlockDate = JSON.parse($('input[name="BlockDate"]').val())
+          $(BlockDate).each(function(index, value) {
+            $(value).each(function(k, v) {
+              disableListDate.push(new Date(v).toDateString());
+            })
+          });
+
+        }
+        if ($('input[name="BookedDate"]').length > 0) {
+          var BookedDate = JSON.parse($('input[name="BookedDate"]').val())
+          $(BookedDate).each(function(index, value) {
+            $(value).each(function(k, v) {
+              disableListDate.push(new Date(v).toDateString());
+            })
+          });
+        }
+        if (disableListDate.includes(date.toDateString())) {
+          return true
+        } else {
+          return false
+        }
+
+      },
+      onOpen: function() {
+        var instance = M.Datepicker.getInstance($('#additionalDaySelect'));
+        instance.options.format = 'dd/mm/yyyy';
+        instance.options.minDate = new Date();
+        instance.options.firstDay = 1
+        str = $('#selectDates').val();
+        str = str.split("-");
+        str[1] = moment(str[1], "DD-MM-YYYY");
+        if (str[1] !== '') {
+          var
+            fullDisabledDate = new Date(str[1]),
+            getDisabledMonth = fullDisabledDate.getMonth(),
+            getDisabledDay = fullDisabledDate.getDate() + 1,
+            getDisabledYear = fullDisabledDate.getFullYear();
+          instance.options.format = 'dd/mm/yyyy';
+          instance.options.minDate = new Date(getDisabledYear, getDisabledMonth, getDisabledDay);
+        }
+        setTimeout(function() {
+          // additionalCheckOldRemove();
+          // disableDates()
+        }, 100)
+      },
+      onDraw: function(el) {
+        if ($("#selectDates").val().length > 0) {
+          additionalCheckOldRemove()
+          // disableDates();
+          str = $("#additionalDaySelect").val();
+          if (str !== undefined) {
+            str = str.split("-");
+            str[0] = moment(str[0], "DD-MM-YYYY");
+            str[1] = moment(str[1], "DD-MM-YYYY");
+            var firsDay = moment(str[0]).format("D");
+            var lastDay = moment(str[1]).format("D");
+            var Month = moment(str[1]).format("M");
+          }
+          $el = $('tbody').find('tr td[data-day="' + lastDay + '"] button[data-month="' + (Month - 1) + '"]');
+          if ($el.length == 0) {
+            lastDay = moment(str[0]).endOf('month').format('D');
+          }
+          $('#alladdlastDate').addClass('check').attr('addcheckvalue', $("#additionalDaySelect").val())
+          for (var i = parseInt(firsDay); i <= parseInt(lastDay); i++) {
+            $('tr td button[data-month="' + (Month - 1) + '"][data-day="' + i + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+        }
+      },
+
+    });
+    // View Product Calender
+    function getFormattedDate(date, fix) {
+      var year = date.getFullYear();
+      var month = (date.getMonth()).toString();
+      month = month.length > 1 ? month : month;
+      var day = date.getDate().toString();
+      day = day.length > 1 ? day : day;
+      var toDate = new Date(year, month, parseInt(day) + fix); //Date one month after selected date
+      return toDate;
+    }
+
+    function CheckOldRemove() {
+
+      if ($("#lastDate").hasClass('check') == true && $("#lastDate").attr('checkvalue').length > 0) {
+        str = $("#lastDate").attr('checkvalue');
+        str = str.split("-");
+        str[0] = moment(str[0], "DD-MM-YYYY");
+        str[1] = moment(str[1], "DD-MM-YYYY");
+        var fDay = moment(str[0]).format("D");
+        var lDay = moment(str[1]).format("D");
+        var laDayMonth = Month = moment(str[1]).format("M");
+        var faDayMonth = moment(str[0]).format("M");
+        $el = $('tbody').find('tr td[data-day="' + lDay + '"] button[data-month="' + (Month - 1) + '"]');
+        if ($el.length == 0) {
+          lDay = moment(str[0]).endOf('month').format('D');
+        }
+        for (var i = parseInt(fDay); i <= parseInt(lDay); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+        }
+        if (parseInt(fDay) > parseInt(lDay)) {
+          for (var i = 1; i <= parseInt(lDay); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (laDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+          }
+          for (var i = parseInt(fDay); i <= parseInt(moment(str[0]).endOf('month').format('D')); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+          }
+        }
+      } else {
+        if ($('tbody').find('td.is-selected').length > 0) {
+          $('tbody').find('td').removeClass('is-selected')
+        }
+      }
+    }
+    let disableListDate = [];
+
+    function changeDate(dateText, selectEl, firsDay) {
+      CheckOldRemove();
+      var Datecheck = moment(dateText.toISOString()).format("D");
+      var fix = 3;
+      if ($('input[name="getCategoryName"]').val() == 'Swim' && $('input[name="getCategoryName"]').val() !== undefined) {
+        fix = 7;
+      }
+      var result = getFormattedDate(dateText, fix);
+      var fDay = moment(dateText).format("D");
+      var day = moment(result).format("D");
+      $month = (parseInt(fDay) > parseInt(moment(result).format("D"))) ? moment(dateText).format("M") : moment(result).format("M");
+      $el = selectEl.closest('tbody').find('tr td[data-day="' + day + '"] button[data-month="' + ($month - 1) + '"]');
+      var LstDate = moment(result.toISOString()).format("DD/MM/YYYY");
+      var Year = moment(result.toISOString()).format("YYYY");
+      if ($el.length == 0) {
+        day = moment(dateText).endOf('month').format('D');
+      }
+      var laDayMonth = moment(result).format("M");
+      var faDayMonth = moment(dateText).format("M");
+      $sel = $('select.orig-select-month option:selected').val();
+
+      for (var i = parseInt(fDay); i <= parseInt(day); i++) {
+        var abc = new Date(Year, (faDayMonth - 1), i).toDateString();
+        if (jQuery.inArray(abc, disableListDate) != -1) {
+          $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false');
+          alert('Sorry! Choose other date')
+          if ($('td.is-selected').length > 0) {
+            $('td').removeClass('is-selected').attr('aria-selected', 'false');
+          }
+          return;
+
+        }
+        $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+      }
+
+      if (parseInt(fDay) > parseInt(result.getDate().toString())) {
+        for (var i = 1; i <= parseInt(result.getDate().toString()); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (laDayMonth - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+        for (var i = parseInt(fDay); i <= parseInt(moment(dateText).endOf('month').format('D')); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+      }
+      $('#lastDate').val(LstDate);
+      $('#alladdlastDate').attr('addfirstday', moment(dateText.toISOString()).format("DD/MM/YYYY"));
+      $('#alladdlastDate').attr('addlastday', LstDate);
+      return LstDate;
+
+    }
+    $("#selectDates").datepicker({
+      onSelect: function(dateText) {
+        var firsDay = dateText.getDate().toString();
+        firsDay = firsDay.length > 1 ? firsDay : firsDay;
+        var selectEl = $('.datepicker-table .datepicker-row td.is-selected');
+        changeDate(dateText, selectEl, firsDay);
+
+      },
+      onClose: function(dateText) {
+        if ($("#selectDates").val().length > 0) {
+          str1 = $("#selectDates").val();
+          if (str1.indexOf('-') != -1) {
+            $('#lastDate').addClass('check').attr('checkvalue', $("#selectDates").val())
+            $("#selectDates").val($("#selectDates").val());
+          } else {
+            $('#lastDate').addClass('check').attr('checkvalue', $("#selectDates").val() + '-' + $('#lastDate').val())
+            $("#selectDates").val($("#selectDates").val() + '-' + $('#lastDate').val());
+          }
+          $('.datepicker-cancel').on('click', function(el) {
+            str = $('#selectDates').val();
+            str = str.split("-");
+            $("#selectDates").val(str[0] + '-' + str[1]);
+            $('#lastDate').addClass('check').attr('checkvalue', str[0] + '-' + str[1])
+          });
+          if ($("#selectDates").val().length > 0) {
+            $('#additionalDayDisable').css('display', 'block')
+          }
+        } else {
+          $("#selectDates").val($('#lastDate').attr('checkvalue'));
+        }
+      },
+      disableDayFn: function(date) {
+
+        if ($('input[name="BlockDate"]').length > 0) {
+          var BlockDate = JSON.parse($('input[name="BlockDate"]').val())
+          $(BlockDate).each(function(index, value) {
+            $(value).each(function(k, v) {
+              disableListDate.push(new Date(v).toDateString());
+            })
+          });
+
+        }
+        if ($('input[name="BookedDate"]').length > 0) {
+          var BookedDate = JSON.parse($('input[name="BookedDate"]').val())
+          $(BookedDate).each(function(index, value) {
+            $(value).each(function(k, v) {
+              disableListDate.push(new Date(v).toDateString());
+            })
+          });
+        }
+        if (disableListDate.includes(date.toDateString())) {
+          return true
+        } else {
+          return false
+        }
+
+      },
+      onOpen: function() {
+        var instance = M.Datepicker.getInstance($('#selectDates'));
+        instance.options.format = 'dd/mm/yyyy';
+        var Default_date = new Date();
+        instance.options.firstDay = 1
+        var Dyear = Default_date.getFullYear();
+        var Dmonth = (Default_date.getMonth()).toString();
+        var Dday = (Default_date.getDate()).toString();
+        var n_Date = new Date(Dyear, Dmonth, parseInt(Dday) + 2);
+        instance.options.minDate = n_Date;
+        if ($("#selectDates").val().length > 0) {
+          str1 = $("#selectDates").val();
+          str1 = str1.split("-");
+          str1[0] = moment(str1[0], "DD-MM-YYYY");
+          var year = moment(str1[0]).format("YYYY");
+          var month = moment(str1[0]).format("M");
+          var day = moment(str1[0]).format("D");
+          instance.setDate(new Date(year, month - 1, parseInt(day)));
+        }
+
+
+      },
+      onDraw: function(el) {
+        if ($("#selectDates").val().length > 0) {
+          str = $("#selectDates").val();
+          str = str.split("-");
+          str[0] = moment(str[0], "DD-MM-YYYY");
+          str[1] = moment(str[1], "DD-MM-YYYY");
+          var FT = str[0];
+          var firsDay = moment(str[0]).format("D");
+          var Da = lastDay = moment(str[1]).format("D");
+          var Se = Month = moment(str[1]).format("M");
+          $month = moment(str[0]).format("M");
+          $ls = moment(str[0]).endOf('month').format('D')
+        } else {
+          var dateText = $('#lastDate').val();
+          dateText = moment(dateText, "DD-MM-YYYY");
+          var fix = 3;
+          if ($('input[name="getCategoryName"]').val() == 'Swim' && $('input[name="getCategoryName"]').val() !== undefined) {
+            fix = 7;
+          }
+          var year = moment(dateText).format("YYYY");
+          var Se = Month = month = moment(dateText).format("M");
+          var Da = lastDay = day = moment(dateText).format("D");
+          var FT = FirstDate = new Date(year, month - 1, parseInt(day) - fix);
+          $ls = moment(FirstDate).endOf('month').format('D')
+          var firsDay = moment(FirstDate).format("D");
+          $month = moment(FirstDate).format("M");
+        }
+        $sel = $('select.orig-select-month option:selected').val();
+        $el = $('tbody').find('tr td button[data-day="' + lastDay + '"][data-month="' + (Month - 1) + '"]');
+        if ($el.length == 0) {
+          lastDay = moment(FT).endOf('month').format('D');
+        }
+        $('#lastDate').addClass('check').attr('checkvalue', $("#selectDates").val())
+
+        for (var i = parseInt(firsDay); i <= parseInt(lastDay); i++) {
+
+          $('td button[data-day="' + i + '"][data-month="' + ($month - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+        if (parseInt(firsDay) > parseInt(Da)) {
+          for (var i = 1; i <= parseInt(Da); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (Se - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+          for (var i = parseInt(firsDay); i <= parseInt($ls); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + ($month - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+        }
+
+      },
+
+    });
+
+    // View Filter Calender
+    function filtergetFormattedDate(date, fix) {
+      var year = date.getFullYear();
+      var month = (date.getMonth()).toString();
+      month = month.length > 1 ? month : month;
+      var day = date.getDate().toString();
+      day = day.length > 1 ? day : day;
+      var toDate = new Date(year, month, parseInt(day) + fix); //Date one month after selected date
+      return toDate;
+    }
+
+    function filterCheckOldRemove() {
+
+      if ($("#flterlastDate").hasClass('check') == true && $("#flterlastDate").attr('checkvalue').length > 0) {
+        str = $("#flterlastDate").attr('checkvalue');
+        str = str.split("-");
+        str[0] = moment(str[0], "DD-MM-YYYY");
+        str[1] = moment(str[1], "DD-MM-YYYY");
+        var fDay = moment(str[0]).format("D");
+        var lDay = moment(str[1]).format("D");
+        var laDayMonth = Month = moment(str[1]).format("M");
+        var faDayMonth = moment(str[0]).format("M");
+        $el = $('tbody').find('tr td[data-day="' + lDay + '"] button[data-month="' + (Month - 1) + '"]');
+        if ($el.length == 0) {
+          lDay = moment(str[0]).endOf('month').format('D');
+        }
+        for (var i = parseInt(fDay); i <= parseInt(lDay); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+        }
+        if (parseInt(fDay) > parseInt(lDay)) {
+          for (var i = 1; i <= parseInt(lDay); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (laDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+          }
+          for (var i = parseInt(fDay); i <= parseInt(moment(str[0]).endOf('month').format('D')); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().removeClass('is-selected').attr('aria-selected', 'false')
+          }
+        }
+      } else {
+        if ($('tbody').find('td.is-selected').length > 0) {
+          $('tbody').find('td').removeClass('is-selected')
+        }
+      }
+    }
+
+    function filterchangeDate(dateText, selectEl, firsDay) {
+
+      filterCheckOldRemove();
+      var Datecheck = moment(dateText.toISOString()).format("D");
+      var fix = 3;
+      if ($('.filterCat option:selected').attr('data-selCat') == 'Swim' && $('.filterCat option:selected').attr('data-selCat') !== undefined) {
+        fix = 7;
+      }
+      var result = getFormattedDate(dateText, fix);
+      var fDay = moment(dateText).format("D");
+      var day = moment(result).format("D");
+      $month = (parseInt(fDay) > parseInt(moment(result).format("D"))) ? moment(dateText).format("M") : moment(result).format("M");
+      $el = selectEl.closest('tbody').find('tr td[data-day="' + day + '"] button[data-month="' + ($month - 1) + '"]');
+      var LstDate = moment(result.toISOString()).format("DD/MM/YYYY");
+      if ($el.length == 0) {
+        day = moment(dateText).endOf('month').format('D');
+      }
+      var laDayMonth = moment(result).format("M");
+      var faDayMonth = moment(dateText).format("M");
+      $sel = $('select.orig-select-month option:selected').val();
+      for (var i = parseInt(fDay); i <= parseInt(day); i++) {
+        $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+      }
+      if (parseInt(fDay) > parseInt(result.getDate().toString())) {
+        for (var i = 1; i <= parseInt(result.getDate().toString()); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (laDayMonth - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+        for (var i = parseInt(fDay); i <= parseInt(moment(dateText).endOf('month').format('D')); i++) {
+          $('td button[data-day="' + i + '"][data-month="' + (faDayMonth - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+      }
+      $('#flterlastDate').val(LstDate);
+      return LstDate;
+
+    }
+    $("#filterselectDates").datepicker({
+
+      onSelect: function(dateText) {
+
+        var firsDay = dateText.getDate().toString();
+        firsDay = firsDay.length > 1 ? firsDay : firsDay;
+        var selectEl = $('.datepicker-table .datepicker-row td.is-selected');
+        filterchangeDate(dateText, selectEl, firsDay);
+
+
+      },
+      onClose: function(dateText) {
+
+        if ($("#filterselectDates").val().length > 0) {
+          str1 = $("#filterselectDates").val();
+          if (str1.indexOf('-') != -1) {
+
+            $('#flterlastDate').addClass('check').attr('checkvalue', $("#filterselectDates").val())
+            $("#filterselectDates").val($("#filterselectDates").val());
+            // $("#filterselectDates").val(SID + '-' + EID);
+          } else {
+
+            $('#flterlastDate').addClass('check').attr('checkvalue', $("#filterselectDates").val() + '-' + $('#flterlastDate').val())
+            $("#filterselectDates").val($("#filterselectDates").val() + '-' + $('#flterlastDate').val());
+            // $("#filterselectDates").val(SID + '-' + EID);
+          }
+          $('.datepicker-cancel').on('click', function(el) {
+            str = $('#filterselectDates').val();
+            str = str.split("-");
+            $("#filterselectDates").val(str[0] + '-' + str[1]);
+            // $("#filterselectDates").val(SID + '-' + EID);
+            $('#flterlastDate').addClass('check').attr('checkvalue', str[0] + '-' + str[1])
+          });
+
+        } else {
+          $("#filterselectDates").val($('#flterlastDate').attr('checkvalue'));
+        }
+
+        $('.FilterSubmit').trigger('click');
+
+      },
+      onOpen: function() {
+
+        var instance = M.Datepicker.getInstance($('#filterselectDates'));
+        instance.options.format = 'dd/mm/yyyy';
+        instance.options.minDate = new Date();
+        instance.options.firstDay = 1
+        if ($("#filterselectDates").val().length > 0) {
+          str1 = $("#filterselectDates").val();
+          str1 = str1.split("-");
+          str1[0] = moment(str1[0], "DD-MM-YYYY");
+          var year = moment(str1[0]).format("YYYY");
+          var month = moment(str1[0]).format("M");
+          var day = moment(str1[0]).format("D");
+          instance.setDate(new Date(year, month - 1, parseInt(day)));
+        }
+      },
+
+      onDraw: function(el) {
+
+        if ($("#filterselectDates").val().length > 0) {
+          str = $("#filterselectDates").val();
+          str = str.split("-");
+          str[0] = moment(str[0], "DD-MM-YYYY");
+          str[1] = moment(str[1], "DD-MM-YYYY");
+          var FT = str[0];
+          var firsDay = moment(str[0]).format("D");
+          var Da = lastDay = moment(str[1]).format("D");
+          var Se = Month = moment(str[1]).format("M");
+          $month = moment(str[0]).format("M");
+          $ls = moment(str[0]).endOf('month').format('D')
+
+        } else {
+          var dateText = $('#flterlastDate').val();
+          dateText = moment(dateText, "DD-MM-YYYY");
+          var fix = 3;
+          if ($('.filterCat option:selected').attr('data-selCat') == 'Swim' && $('.filterCat option:selected').attr('data-selCat') !== undefined) {
+            fix = 7;
+          }
+          var year = moment(dateText).format("YYYY");
+          var Se = Month = month = moment(dateText).format("M");
+          var Da = lastDay = day = moment(dateText).format("D");
+          var FT = FirstDate = new Date(year, month - 1, parseInt(day) - fix);
+          $ls = moment(FirstDate).endOf('month').format('D')
+          var firsDay = moment(FirstDate).format("D");
+          $month = moment(FirstDate).format("M");
+        }
+        $sel = $('select.orig-select-month option:selected').val();
+        $el = $('tbody').find('tr td button[data-day="' + lastDay + '"][data-month="' + (Month - 1) + '"]');
+        if ($el.length == 0) {
+          lastDay = moment(FT).endOf('month').format('D');
+        }
+
+
+        $('#flterlastDate').addClass('check').attr('checkvalue', $("#filterselectDates").val())
+
+        for (var i = parseInt(firsDay); i <= parseInt(lastDay); i++) {
+
+          $('td button[data-day="' + i + '"][data-month="' + ($month - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+        if (parseInt(firsDay) > parseInt(Da)) {
+          for (var i = 1; i <= parseInt(Da); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (Se - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+          for (var i = parseInt(firsDay); i <= parseInt($ls); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + ($month - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+        }
+      },
+
+    });
+
+    // Mobile FIlterCalender
+
+    $("#MobilefilterselectDates").datepicker({
+
+      onSelect: function(dateText) {
+        var firsDay = dateText.getDate().toString();
+        firsDay = firsDay.length > 1 ? firsDay : firsDay;
+        var selectEl = $('.datepicker-table .datepicker-row td.is-selected');
+        filterchangeDate(dateText, selectEl, firsDay);
+
+
+      },
+      onClose: function(dateText) {
+
+        if ($("#MobilefilterselectDates").val().length > 0) {
+          str1 = $("#MobilefilterselectDates").val();
+          if (str1.indexOf('-') != -1) {
+            $('#flterlastDate').addClass('check').attr('checkvalue', $("#MobilefilterselectDates").val())
+            $("#MobilefilterselectDates").val($("#MobilefilterselectDates").val());
+          } else {
+            $('#flterlastDate').addClass('check').attr('checkvalue', $("#MobilefilterselectDates").val() + '-' + $('#flterlastDate').val())
+            $("#MobilefilterselectDates").val($("#MobilefilterselectDates").val() + '-' + $('#flterlastDate').val());
+          }
+          $('.datepicker-cancel').on('click', function(el) {
+            str = $('#MobilefilterselectDates').val();
+            str = str.split("-");
+            $("#MobilefilterselectDates").val(str[0] + '-' + str[1]);
+            $('#flterlastDate').addClass('check').attr('checkvalue', str[0] + '-' + str[1])
+          });
+
+        } else {
+          $("#MobilefilterselectDates").val($('#flterlastDate').attr('checkvalue'));
+        }
+        if ($("#MobilefilterselectDates").closest('form').hasClass('mobile_active') == true) {
+          $('.mFilterSubmit').trigger('click');
+        }
+        if ($(".filterDesigner").closest('form').hasClass('web') == true) {
+          $('.FilterSubmit').trigger('click');
+        }
+        // $('.FilterSubmit').trigger('click');
+      },
+      onOpen: function() {
+
+        var instance = M.Datepicker.getInstance($('#MobilefilterselectDates'));
+        instance.options.format = 'dd/mm/yyyy';
+        instance.options.minDate = new Date();
+        instance.options.firstDay = 1
+        if ($("#MobilefilterselectDates").val().length > 0) {
+          str1 = $("#MobilefilterselectDates").val();
+          str1 = str1.split("-");
+          str1[0] = moment(str1[0], "DD-MM-YYYY");
+          var year = moment(str1[0]).format("YYYY");
+          var month = moment(str1[0]).format("M");
+          var day = moment(str1[0]).format("D");
+          instance.setDate(new Date(year, month - 1, parseInt(day)));
+        }
+      },
+      onDraw: function(el) {
+
+        if ($("#MobilefilterselectDates").val().length > 0) {
+          str = $("#MobilefilterselectDates").val();
+          str = str.split("-");
+          str[0] = moment(str[0], "DD-MM-YYYY");
+          str[1] = moment(str[1], "DD-MM-YYYY");
+          var FT = str[0];
+          var firsDay = moment(str[0]).format("D");
+          var Da = lastDay = moment(str[1]).format("D");
+          var Se = Month = moment(str[1]).format("M");
+          $month = moment(str[0]).format("M");
+          $ls = moment(str[0]).endOf('month').format('D')
+        } else {
+          var dateText = $('#flterlastDate').val();
+          dateText = moment(dateText, "DD-MM-YYYY");
+          var fix = 3;
+          if ($('.filterCat option:selected').attr('data-selCat') == 'Swim' && $('.filterCat option:selected').attr('data-selCat') !== undefined) {
+            fix = 7;
+          }
+          var year = moment(dateText).format("YYYY");
+          var Se = Month = month = moment(dateText).format("M");
+          var Da = lastDay = day = moment(dateText).format("D");
+          var FT = FirstDate = new Date(year, month - 1, parseInt(day) - fix);
+          $ls = moment(FirstDate).endOf('month').format('D')
+          var firsDay = moment(FirstDate).format("D");
+          $month = moment(FirstDate).format("M");
+        }
+        $sel = $('select.orig-select-month option:selected').val();
+        $el = $('tbody').find('tr td button[data-day="' + lastDay + '"][data-month="' + (Month - 1) + '"]');
+        if ($el.length == 0) {
+          lastDay = moment(FT).endOf('month').format('D');
+        }
+        $('#flterlastDate').addClass('check').attr('checkvalue', $("#MobilefilterselectDates").val())
+
+        for (var i = parseInt(firsDay); i <= parseInt(lastDay); i++) {
+
+          $('td button[data-day="' + i + '"][data-month="' + ($month - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+        }
+        if (parseInt(firsDay) > parseInt(Da)) {
+          for (var i = 1; i <= parseInt(Da); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + (Se - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+          for (var i = parseInt(firsDay); i <= parseInt($ls); i++) {
+            $('td button[data-day="' + i + '"][data-month="' + ($month - 1) + '"]').parent().addClass('is-selected').attr('aria-selected', 'true')
+          }
+        }
+      },
+
+    });
+
+
+
+    // collapse js
+
+    $('.collapsible').collapsible();
+
+    // make header fix
+
+    $(window).scroll(function() {
+      var sticky = $('.header'),
+        scroll = $(window).scrollTop();
+
+      if (scroll >= 190) sticky.addClass('fixed_header');
+      else sticky.removeClass('fixed_header');
+    });
+
+    // typing js
+
+
+    // slim scrollbar
+
+    $('.chat_list_column,.chatting_section_wrapper').slimscroll({
+      height: '600px',
+      start: 'bottom',
+      alwaysVisible: true,
+    });
+
+
+    $('#notification_scroll_wrapper form').slimscroll({
+      height: '200px',
+      alwaysVisible: true,
+    });
+
+    // chat slide toggle
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+
+    });
+
+
+
+    $('#filterdate').datepicker({
+      onOpen: function() {
+        var instance = M.Datepicker.getInstance($('#filterdate'));
+        instance.options.format = "dd/mm/yyyy";
+        instance.options.firstDay = 1
+      },
+    });
+
+    $('.chat_list_column li a').click(function() {
+      var Id = $(this).data('userid');
+      $('.chatting_section_wrapper').attr('sendto', Id);
+      $.ajax({
+        type: 'POST',
+        url: '/getMessage',
+        data: {
+          userid: Id
+        },
+        success: function(data) {
+          console.log(data.result.message)
+          var message = data.result.message
+          var objectKey = data.objectKey;
+          $('.chatting_section_wrapper .chat_message').empty();
+          $html = '<div class="go_back_chat"><a><i class="zmdi zmdi-long-arrow-left"></i>Go Back</a></div>';
+          if (message !== undefined) {
+            $(objectKey).each(function(index, value) {
+              if (message[value].to !== undefined && message[value].to !== null) {
+                $class = 'left_chat right_chat w-100';
+                $read = (message[value].read == 0) ? 'unread' : 'read';
+                $to = '<div class="' + $class + '"><p class="' + $read + '"><span>' + message[value].to + '</span></p></div>';
+                $html = $html.concat($to);
+                return true;
+              }
+              if (message[value].from !== undefined && message[value].from !== null) {
+                $class = 'left_chat w-100';
+                $imag = data.result.userImg_url;
+                $name = data.result.name;
+                $read = (message[value].read == 0) ? 'unread' : 'read';
+                $fromhtml = '<div class="' + $class + '"><img src="' + $imag + '" alt="Image" /><h4>' + $name + '</h4><p  class="' + $read + '"><span>' + message[value].from + '</span></p></div>';
+                $html = $html.concat($fromhtml);
+                return true;
+              }
+            })
+          } else {
+            $html = $html.concat('<p class="no_message"><span>No Messages here yet</span></p>');
+          }
+          $('.chatting_section_wrapper .chat_message').append($html);
+          $('.chatting_section').css("transform", "translateX(0%)");
+        }
+      });
+
+    });
+
+    $('input[name="sendmessage"]').keypress(function(e) {
+      if (e.which == 13) { //Enter key pressed
+        $('.chat_input_div .chatt_submit').click(); //Trigger search button click event
+      }
+    });
+
+
+    $('.chat_input_div .chatt_submit').click(function() {
+      var Id = $('.chatting_section_wrapper').attr('sendto');
+      var message = $('input[name="sendmessage"]').val();
+      $.ajax({
+        type: 'POST',
+        url: '/sendMessage',
+        data: {
+          userid: Id,
+          message: message
+        },
+        success: function(data) {
+          if (data.status == 200) {
+            if ($('.chat_message .no_message').length > 0) {
+              $('.chat_message .no_message').empty();
+            }
+            $html = '<div class="left_chat right_chat w-100"><p><span>' + message + '</span></p></div>'
+            $('.chat_message').append($html);
+            $('input[name="sendmessage"]').val('');
+            var scrollTo_int = $('.chatting_section_wrapper').prop('scrollHeight');
+            $('.chatting_section_wrapper').slimScroll({
+              scrollTo: scrollTo_int,
+              height: '600px',
+              start: 'bottom',
+              alwaysVisible: true
+            });
+          }
+        }
+      });
+
+    })
+
+    $(document).on('click', '.go_back_chat a', function() {
+      $('.chatting_section').css("transform", "translateX(100%)");
+      location.reload();
+    });
+
+
+
+
+
+    // for increase decrease input
+
+    $(function() {
+
+      $(".numbers-row").append('<div class="inc button">+</div><div class="dec button">-</div>');
+
+      $(".button").on("click", function() {
+
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+
+        if ($button.text() == "+") {
+          var newVal = parseFloat(oldValue) + 1;
+        } else {
+          // Don't allow decrementing below zero
+          if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+          } else {
+            newVal = 0;
+          }
+        }
+
+        $button.parent().find("input").val(newVal);
+
+      });
+    });
+  });
+</script>
+
+
+
+
+
+<script>
+  setTimeout(function() {
+    $('.alert').fadeOut('fast');
+  }, 5000);
+</script>
+
+<script>
+  $('.shareWardrobeDesign').click(function() {
+    $('#shareLinkModal').val($('#shareLinkDesigner').text());
+  });
+</script>
+
+
+
+
+<!--  -->
+<!-- message POPUP ENDS HERE-->
+<!-- message POPUP ENDS HERE-->
+
+
+
+<!-- Order popup start -->
+<!-- order popup end -->
+<script>
+  var slider11 = $('#image-gallery').lightSlider({
+    gallery: true,
+    item: 1,
+    thumbItem: 4,
+    slideMargin: 0,
+    speed: 500,
+    auto: false,
+    loop: false,
+    onSliderLoad: function($el) {
+      $('#image-gallery').removeClass('cS-hidden');
+      //$el.find('li').zoom();
+    }
+  });
+  $(document).ready(function() {
+    $(".card_billing span").click(function() {
+      $(".hide_section").slideToggle();
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $("#btn_verify").click(function(e) {
+    console.log('click');
+    $('#verified_popup .verified_name').val($('input.Verified_firstname').val());
+    $('#verified_popup .verified_last').val($('input.Verified_lastname').val());
+    $('#verified_popup .verified_em').val($('input.Verified_email').val());
+    $('#verified_popup .verified_ph').val($('input.Verified_phone').val());
+    $('#verified_popup .verifiedID').val($('input.verifiedID').val());
+
+    // $('#verified_popup').show();
+    $('#verified_popup').modal('open');
+
+
+
+  });
+  // $("#verified_popup select").on('change', function() {
+  //   var document_type = $(this).val();
+  //   if (document_type !== '') {
+  //     $('.adderror').text('');
+  //     $('.adderror').css('display', 'none !important');
+  //   }
+
+  // })
+
+  $('.btn_review').on('click', function() {
+
+    $('#Review_Name').text($(this).data('username'))
+    $('#Review_UserID').val($(this).data('userid'))
+    $('#imageID').attr('src', $(this).data('profileurl'))
+    $('#add_review').modal('open');
+  })
+
+
+  $('.btn_genrate_label').on('click', function() {
+
+    $('#UserID').val($(this).data('userid'))
+    $('#orderid').val($(this).data('orderid'))
+    $('#btn_genrate_label').modal('open');
+  })
+
+  $('#uploaddocumnet').on('change', function() {
+    $(this).removeClass('error').addClass('valid');
+    $(this).next().css('display', 'none');
+  });
+  $(document).on('click', '#VerifyAccount', function(e) {
+    var document_type = $("#verified_popup select option:selected").val();
+    var check = true;
+    // if (document_type == '') {
+    //   e.preventDefault();
+    //   $('.adderror').text('Please select an document type');
+    //   $('.adderror').css('display', 'block !important');
+    //   check = false;
+    // }
+
+    // if ($("#uploaddocumnet")[0].files[0] == undefined) {
+    //   check = false;
+    // }
+
+    if (check == true) {
+      document.getElementById('load').style.visibility = "visible";
+      $("form.verified_account").submit()
+    }
+  })
+
+  $(window).load(function() {
+    if ($('.header').hasClass('login') == true) {
+      $('#signup_popup').modal('open');
+      setTimeout(function() {
+        $('#signup_popup').modal('close');
+      }, 5000);
+    }
+  });
+</script>
+
+<script>
+  $('#datesFetch').val($('#datesFetchtemp').val())
+  $('#newDatesFetch').val($('#newDatesFetchTemp').val())
+  $('#ChangedatesFetch').val($('#datesFetchtemp').val())
+
+
+
+  var today = moment().day();
+  $('#calendar').fullCalendar({
+
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'null'
+    },
+    firstDay: 1,
+    // defaultDate: $.fullCalendar.moment().startOf('week'),
+    // defaultDate: '2019-07-12',
+    navLinks: false, // can click day/week names to navigate views
+    selectable: true,
+    selectHelper: true,
+    longPressDelay: 1,
+    selectLongPressDelay: 1,
+    eventLongPressDelay: 1,
+    dayClick: function(date, jsEvent, view, resourceObj) {
+
+    },
+
+    select: function(start, end, event, allDay) {
+      var tempDate = $('#datesFetchtemp').length;
+      var abcend = moment(end).subtract(1, 'days');
+      var end = moment(abcend).format("YYYY-MM-DD");
+      var start = moment(start).format("YYYY-MM-DD");
+      var Eend = end + 'T23:59:00';
+      var Estart = start + 'T00:00:00';
+      var addDates = $('#datesFetch').val();
+      var newaddDates = $('#newDatesFetch').val();
+      var title = prompt('Event Title:');
+      var chngdeDate = $('#ChangedatesFetch').val()
+      var eventData;
+
+
+      if (title) {
+        eventData = {
+          title: title,
+          start: Estart,
+          end: Eend
+        };
+
+        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+        if ($('#datesFetch').val().length == 0) {
+          $('#blockedcheckbox').prop('checked', true)
+          var changeDate = moment(moment(eventData.start).format().split("T")[0]).format("DD/MM/YYYY") + '->' + moment(moment(eventData.end).format().split("T")[0]).format("DD/MM/YYYY")
+          var addDates = moment(eventData.start).format().split("T")[0] + '->' + moment(eventData.end).format().split("T")[0];
+          var newaddDates = moment(eventData.start).format().split("T")[0] + '->' + moment(eventData.end).format().split("T")[0] + '.' + title;
+        } else {
+          $('#blockedcheckbox').prop('checked', true)
+
+          var changeDate = chngdeDate + ',' + moment(moment(eventData.start).format().split("T")[0]).format("DD/MM/YYYY") + '->' + moment(moment(eventData.end).format().split("T")[0]).format("DD/MM/YYYY")
+          var addDates = addDates + ',' + moment(eventData.start).format().split("T")[0] + '->' + moment(eventData.end).format().split("T")[0];
+          var newaddDates = newaddDates + ',' + moment(eventData.start).format().split("T")[0] + '->' + moment(eventData.end).format().split("T")[0] + '.' + title;
+        }
+
+        $('#datesFetch').val(addDates) //Send Values into Input Hidden field
+        $('#ChangedatesFetch').val(changeDate)
+        $('#newDatesFetch').val(newaddDates) //Send Values into hidden field
+
+
+
+      }
+
+      $('#calendar').fullCalendar('unselect');
+    },
+    eventClick: function(calEvent, jsEvent, view) {
+      $('#calendar').fullCalendar('removeEvents', calEvent._id);
+      var startDate = moment(calEvent.start._d);
+      var endDate = moment(calEvent.end._d).subtract(1, 'days');
+      var title = calEvent.title;
+      var deleteStart = calEvent.start._d.toDateString();
+      var getValue = $('#datesFetch').val();
+      var getNewValue = $('#ChangedatesFetch').val();
+      var newDatesFetch = $('#newDatesFetch').val();
+
+
+      if (getValue.search(',' + moment(startDate).format("YYYY-MM-DD") + '->' + moment(endDate).format("YYYY-MM-DD")) == -1) {
+
+        var changeNewDate = getNewValue.replace(moment(startDate).format("DD/MM/YYYY") + '->' + moment(endDate).format("DD/MM/YYYY"), '');
+
+        var removeText = getValue.replace(moment(startDate).format("YYYY-MM-DD") + '->' + moment(endDate).format("YYYY-MM-DD"), '');
+
+        var newremoveText = newDatesFetch.replace(moment(startDate).format("YYYY-MM-DD") + '->' + moment(endDate).format("YYYY-MM-DD") + '.' + title, '');
+
+      } else {
+        // $('#blockedcheckbox').prop('checked', false)        
+
+        var changeNewDate = getNewValue.replace(',' + moment(startDate).format("DD/MM/YYYY") + '->' + moment(endDate).format("DD/MM/YYYY"), '');
+
+        var removeText = getValue.replace(',' + moment(startDate).format("YYYY-MM-DD") + '->' + moment(endDate).format("YYYY-MM-DD"), '');
+
+        var newremoveText = newDatesFetch.replace(',' + moment(startDate).format("YYYY-MM-DD") + '->' + moment(endDate).format("YYYY-MM-DD") + '.' + title, '');
+      }
+
+
+
+
+      $('#ChangedatesFetch').val(changeNewDate) // NEW DATE
+      $('#datesFetch').val(removeText);
+      $('#newDatesFetch').val(newremoveText) //Send Values into hidden field
+
+
+      if (changeNewDate == "" || changeNewDate == null) {
+        $('#blockedcheckbox').prop('checked', false)
+      }
+      console.log(changeNewDate)
+
+    },
+
+
+    // editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+      
+    ],
+
+  });
+</script>
+
+
+<script>
+  // var calnderArray = [];
+  // console.log(calnderArray)
+  $('.CheckCalanderClick').click(function() {
+    var calnderArray = [];
+    var valu = $(this).data('result');
+    $.each(valu, function(key, val) {
+      var str = val.startingDate;
+      str = str.split("->");
+      var st = moment(str[0], 'DD/MM/YYYY').format('YYYY-MM-DD') + "T00:00:00";
+      var end = moment(str[1], 'DD/MM/YYYY').format('YYYY-MM-DD') + "T23:59:00";
+      var el = {
+        title: val.title,
+        start: st,
+        end: end,
+      };
+      calnderArray.push(el)
+    })
+    var today = moment().day();
+    $('#rescalnder').fullCalendar('destroy');
+    $('#rescalnder').fullCalendar({
+
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'null'
+      },
+      firstDay: 1,
+      // defaultDate: '2019-07-12',
+      navLinks: false, // can click day/week names to navigate views
+      selectable: true,
+      selectHelper: true,
+      longPressDelay: 1,
+      selectLongPressDelay: 1,
+      eventLongPressDelay: 1,
+      editable: false,
+      eventLimit: true, // allow "more" link when too many events
+      events: calnderArray,
+
+    });
+  });
+</script>
+
+
+
+
+</body>
+
+</html>
