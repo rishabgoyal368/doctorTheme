@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-11">
                             <div class="card-header">
-                                <h4 class="card-title">Patient list</h4>
+                                <h4 class="card-title">Care Takers list</h4>
                             </div>
                         </div>
                         <div class="col-1">
@@ -63,7 +63,7 @@
                                         <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="{{url('admin/edit-patient')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="{{url('admin/edit-care-taker')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>

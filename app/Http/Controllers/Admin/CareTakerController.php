@@ -48,9 +48,9 @@ class CareTakerController extends Controller
             $patient = [];
             $patient = CareTaker::find($id);
             if ($patient) {
-                $label = 'Edit Patient';
+                $label = 'Edit Care Taker';
             } else {
-                $label = 'Add Patient';
+                $label = 'Add Care Taker';
             }
             return view('admin.careTaker.addEdit', compact('patient', 'label'));
         } else if ($method == 'POST') {
