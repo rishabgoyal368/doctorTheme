@@ -25,7 +25,7 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="{{url('admin')}}" method="POST">
+                                    <form action="{{Request::url()}}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Email</strong></label>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
 use App\Patient;
+use App\CareTaker;
+use App\Product;
 use Hash;
 
 class IndexController extends Controller
@@ -16,14 +18,16 @@ class IndexController extends Controller
 
     public function home()
     {
-        return view('user.index');
+        $careTaker = CareTaker::take(3)->get();
+        $product = Product::take(3)->get();
+        return view('user.index',compact('careTaker','product'));
     }
 
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'email' => 'required|email',
-            'password' => 'required',            
+            'password' => 'required',
         ]);
     }
 
@@ -72,5 +76,17 @@ class IndexController extends Controller
                 return redirect()->back()->with(['error' => $message]);
             }
         }
+    }
+
+    public function logout()
+    {
+        Auth::guard('user')->logout();
+        return redirect('/');
+    }
+
+    public function product()
+    {
+         $product = Product::where('status','active')->get();
+         return view('user.products',compact('product'));
     }
 }

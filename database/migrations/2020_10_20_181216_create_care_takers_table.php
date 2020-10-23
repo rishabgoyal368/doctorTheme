@@ -22,6 +22,7 @@ class CreateCareTakersTable extends Migration
             $table->string('password', 300);
             $table->string('profile_image', 300);
             $table->string('description', 300);
+            $table->string('type', 10);
             $table->softDeletes('deleted_at', 0); 
             $table->timestamps();
         });

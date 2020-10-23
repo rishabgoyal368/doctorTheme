@@ -11,10 +11,10 @@ class Report extends Model
         'bp',
         'sugar',
         'temperature',
-        'brewakfast',
+        'breakfast',
         'lunch',
         'dinner',
-        'activiyies',
+        'activities',
         'patinet_id',
     ];
 
@@ -28,10 +28,10 @@ class Report extends Model
                 'bp' => @$data['bp'] ?: null,
                 'sugar' => @$data['sugar'] ?: null,
                 'temperature' => @$data['temperature'] ?: null,
-                'brewakfast' => @$data['breakfast'] ?: null,
+                'breakfast' => @$data['breakfast'] ?: null,
                 'lunch' => @$data['lunch'] ?: null,
                 'dinner' => @$data['dinner'] ?: null,
-                'activiyies' => @$data['activities'] ?: null,
+                'activities' => @$data['activities'] ?: null,
                 'patinet_id' => @$data['patinet_id'] ?: null,
             ]
         );

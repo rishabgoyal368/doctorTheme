@@ -48,6 +48,7 @@
                                         <th>Gender</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
+                                        <th>Type</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -58,9 +59,9 @@
                                         <td>{{$value['name']}}</td>
                                         <td>{{@$value['gender']}}</td>
                                         <td>{{$value['email']}}</td>
-                                        <!-- <td>{{$value['mobile']}}</td> -->
                                         <td><a href="javascript:void(0);"><strong>{{$value['mobile']}}</strong></a></td>
                                         <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
+                                        <td>{{$value['type'] == '1' ? 'Doctor' : 'Care Taker'}}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{url('admin/edit-care-taker')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>

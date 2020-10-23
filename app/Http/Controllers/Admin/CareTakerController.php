@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
 use App\CareTaker;
+use App\CareTakerRequest;
 use Hash;
 
 use Session;
@@ -100,6 +101,33 @@ class CareTakerController extends Controller
                     $message = 'Error. Please Try Again';
                     return redirect()->back()->with(['error' => $message]);
                 }
+            }
+        }
+    }
+
+    public function Crequest()
+    {
+        $request = CareTakerRequest::get();
+        return view('admin.careTaker.request', compact('request'));
+    }
+
+    public function change(Request $request, $id = null)
+    {
+        $method = $request->method();
+        if ($method == 'GET') {
+            $request = CareTakerRequest::find($id);
+            return view('admin.careTaker.Changerequest', compact('request'));
+        }
+        else if ($method == 'POST') {
+            $a =  CareTakerRequest::where('id', $request->id)->update([
+                'status' => $request->status,
+            ]);
+            if ($a) {
+                $message = 'Request updated successfully.';
+                return redirect('admin/care-taker-request')->with(['success' => $message]);
+            } else {
+                $message = 'Error. Please Try Again';
+                return redirect()->back()->with(['error' => $message]);
             }
         }
     }

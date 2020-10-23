@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\CareTakerRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,5 +58,11 @@ class ReportController extends Controller
                 return redirect()->back()->with(['error' => $message]);
             }
         }
+    }
+
+    public function assignCT()
+    {
+        $report = CareTakerRequest::where('user_id',Auth::guard('user')->user()->id)->get();
+        return view('user.care_list', compact('report'));
     }
 }

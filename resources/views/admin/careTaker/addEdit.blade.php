@@ -62,7 +62,7 @@
                                                     <option value="" selected>Select Gender</option>
                                                     <option value="male" @if(@$patient->gender == 'male') selected @endif >Male</option>
                                                     <option value="female" @if(@$patient->gender == 'female') selected @endif >Female</option>
-                                                    <option value="other"  @if(@$patient->gender == 'other') selected @endif>Others</option>
+                                                    <option value="other" @if(@$patient->gender == 'other') selected @endif>Others</option>
                                                 </select>
                                                 @if ($errors->has('email'))
                                                 <div class="alert alert-danger">
@@ -93,6 +93,22 @@
                                                 @if ($errors->has('mobile'))
                                                 <div class="alert alert-danger">
                                                     <strong>{{ $errors->first('mobile') }}</strong>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-email">Type <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select name="type" id="">
+                                                    <option value="">Select Type</option>
+                                                    <option value="1" @if(@$patient->type == '1') selected @endif>Doctor</option>
+                                                    <option value="2" @if(@$patient->type == '2') selected @endif>Care taker</option>
+                                                </select>
+                                                @if ($errors->has('type'))
+                                                <div class="alert alert-danger">
+                                                    <strong>{{ $errors->first('type') }}</strong>
                                                 </div>
                                                 @endif
                                             </div>

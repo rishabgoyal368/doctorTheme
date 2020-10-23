@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class CareTaker extends Model
+
+class CareTaker extends Authenticatable
 {
     protected $fillable = [
-        'name', 'email', 'gender', 'password', 'mobile', 'profile_image', 'description',
+        'name', 'email', 'gender', 'password', 'mobile', 'profile_image', 'description','type',
     ];
 
     public static function addEdit($data)
@@ -23,6 +25,7 @@ class CareTaker extends Model
                 'mobile' => @$data['mobile'] ?: null,
                 'password' => @$data['password'] ?: null,
                 'profile_image' => @$data['profile_image'] ?: null,
+                'type' => @$data['type'],
                 'description' => @$data['description'] ?: '--',
             ]
         );
@@ -37,4 +40,5 @@ class CareTaker extends Model
             return env('APP_URL') . '/' . 'images/profile/small/pic1.jpg';
         }
     }
+
 }

@@ -47,13 +47,13 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $data = Admin::get();
-        return view('Admin.auth.login')->with(['data'=>$data]);
+        return view('Admin.auth.login')->with(['data' => $data]);
     }
 
     public function showForgetLoginForm()
     {
         $data = Admin::get();
-        return view('Admin.auth.forget')->with(['data'=>$data]);
+        return view('Admin.auth.forget')->with(['data' => $data]);
     }
 
 
@@ -65,7 +65,7 @@ class LoginController extends Controller
         return redirect('admin/');
     }
 
-    
+
     protected function guard()
     {
         return Auth::guard('admin');
@@ -76,45 +76,37 @@ class LoginController extends Controller
     {
         return Validator::make($data, [
             'email' => 'required|email',
-            'password' => 'required',            
+            'password' => 'required',
         ]);
     }
 
     public function login(Request $request)
-    {   
-	$method = $request->method();
-    if($method == 'GET')
-    {	
-    	   // Admin::create([
-        //     'name' => 'rishab',
-        //     'email' => 'rishab.test.com',
-        //     'password' => bcrypt('12345'),
-            
-        // ]);
-        return view('admin.login');    	
-    }
-    else if($method == 'POST')
     {
-    	$rd = $request->all();
-        $rd['email'] = strtolower($request->input('email'));
-        $request->replace($rd);
-        $input = $request->all();
-        $validator = $this->validator($input);
-        if($validator->fails()){
-            return redirect()->back()->withInput()->withErrors($validator);
+        $method = $request->method();
+        if ($method == 'GET') {
+            // Admin::create([
+            //     // 'name' => 'rishab',
+                // // 'email' => 'rishab@test.com',
+                // // 'password' => bcrypt('12345'),
+            //     // 'profile_image' => '-',
+            // ]);
+            return view('admin.login');
+        } else if ($method == 'POST') {
+            $rd = $request->all();
+            $rd['email'] = strtolower($request->input('email'));
+            $request->replace($rd);
+            $input = $request->all();
+            $validator = $this->validator($input);
+            if ($validator->fails()) {
+                return redirect()->back()->withInput()->withErrors($validator);
+            } else {
+                if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
+                    return redirect('/admin/home');
+                } else {
+                    $message = 'Invalid Login.';
+                    return redirect()->back()->with(['error' => $message]);
+                }
+            }
         }
-        else{ 
-            if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])){     
-                return redirect('/admin/home');      
-            }else{
-               $message='Invalid Login.';
-               return redirect()->back()->with(['error' => $message]);
-            }  
-        
-        }
-     
     }
-        
-    }
-
 }

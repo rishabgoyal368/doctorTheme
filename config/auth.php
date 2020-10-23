@@ -54,6 +54,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'cakerTaker' => [
+            'driver' => 'session',
+            'provider' => 'cakerTakers',
+        ],
     ],
 
     /*
@@ -81,6 +85,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+        'cakerTakers' => [
+            'driver' => 'eloquent',
+            'model' => App\CareTaker::class,
         ],
         // 'users' => [
         //     'driver' => 'database',

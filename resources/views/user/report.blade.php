@@ -48,8 +48,8 @@
                                     <td>{{$value['lunch']}}</td>
                                     <td>{{$value['dinner']}}</td>
                                     <td>{{$value['activiyies']}}</td>                                   
-                                    <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
-                                    <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['updated_at'])) : '--'}}</td>
+                                    <td>{{@$value['created_at'] ? date('d-M-Y h:i:s A',strtotime($value['created_at'])) : '--'}}</td>
+                                    <td>{{@$value['created_at'] ? date('d-M-Y h:i:s A',strtotime($value['updated_at'])) : '--'}}</td>
                                     <td>
                                         <div class="d-flex">
                                             <a href="{{url('edit-report')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>

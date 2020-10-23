@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
 use App\Admin;
+use App\CareTaker;
 use Hash;
 
 use Session;
@@ -54,7 +55,12 @@ class DashboardController extends Controller
     {
         $method = $request->method();
         if ($method == 'GET') {
-            return view('admin.profile');
+            if (Auth::guard('admin')->check()) {
+                $user = Auth::guard('admin')->user();
+            } else if (Auth::guard('cakerTaker')->check()) {
+                $user = Auth::guard('cakerTaker')->user();
+            }
+            return view('admin.profile',compact('user'));
         } else if ($method == 'POST') {
             $data = $request->all();
             $id =  Auth::guard('admin')->user()->id;
@@ -112,18 +118,18 @@ class DashboardController extends Controller
                 return redirect()->back()->withInput()->withErrors($validator);
             } else {
                 $input = $request->all();
-                $user = Admin::find(Auth::guard('admin')->user()->id);
+                $user = CareTaker::find(Auth::guard('admin')->user()->id);
                 if (!Hash::check($input['currentPassword'], $user->password)) {
                     $message = 'Current Passsword is not match';
-                    return redirect('admin/change-password')->with(['error' => $message]);
+                    return redirect('employee/change-password')->with(['error' => $message]);
                 } else {
                     $user->password = bcrypt($request->password);
                     if ($user->save()) {
                         $message = 'Your password updated successfully.';
-                        return redirect('admin/home')->with(['success' => $message]);
+                        return redirect('employee/home')->with(['success' => $message]);
                     } else {
                         $message = 'Error. Please Try Again';
-                        return redirect('admin/change-password')->with(['error' => $message]);
+                        return redirect('employee/change-password')->with(['error' => $message]);
                     }
                 }
             }
@@ -133,7 +139,6 @@ class DashboardController extends Controller
     public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
-
         return redirect('/admin');
     }
 }

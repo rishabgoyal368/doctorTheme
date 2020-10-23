@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zxx">
 
-<!-- Mirrored from templates.envytheme.com/drodo/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Oct 2020 14:35:22 GMT -->
+<!-- Mirrored from templates.envytheme.com/drodo/default/{{url('/')}} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Oct 2020 14:35:22 GMT -->
 
 <head>
     <!-- Required meta tags -->
@@ -38,8 +38,8 @@
             <div class="container">
                 <div class="drodo-responsive-menu">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/img/logo.png" alt="logo">
+                       
+                        <a href="{{url('/')}}" class="logo d-inline-block"><img src="assets/img/logo.png" alt="image" style="width:150px;height:70px"></a>                            
                         </a>
                     </div>
                 </div>
@@ -48,8 +48,8 @@
         <div class="drodo-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" alt="logo">
+                    <!-- <a class="navbar-brand" href="{{url('/')}}"> -->
+                        <a href="{{url('/')}}" class="navbar-brand"><img src="assets/img/logo.png" alt="image" style="width:150px;height:70px"></a>                        
                     </a>
 
                     <div class="collapse navbar-collapse mean-menu">
@@ -62,11 +62,13 @@
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a href="{{url('/my-account')}}" class="nav-link">Account</a></li>
 
+                                    <li class="nav-item"><a href="{{url('/assign-care-taker')}}" class="nav-link">Care taker</a></li>
+
                                     <li class="nav-item"><a href="{{url('/reports')}}" class="nav-link">Report</a></li>
 
                                     <li class="nav-item"><a href="{{url('/order')}}" class="nav-link">Order</a></li>
 
-                                    <li class="nav-item"><a href="{{url('/my-account')}}" class="nav-link">Logout</a></li>
+                                    <li class="nav-item"><a href="{{url('/logout')}}" class="nav-link">Logout</a></li>
                                 </ul>
                             </li>
                             <!-- <li class="nav-item"><a href="{{url('/my-account')}}" class="nav-link">My Account</a></li> -->
@@ -588,6 +590,6 @@
     <script src="{{asset('js/plugins-init/datatables.init.js')}}"></script>
 </body>
 
-<!-- Mirrored from templates.envytheme.com/drodo/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Oct 2020 14:37:22 GMT -->
+<!-- Mirrored from templates.envytheme.com/drodo/default/{{url('/')}} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Oct 2020 14:37:22 GMT -->
 
 </html>
