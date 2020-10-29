@@ -5,20 +5,6 @@
         ***********************************-->
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <!-- <div class="welcome-text">
-                    <h4>Hi, welcome back!</h4>
-                    <span>Datatable</span>
-                </div> -->
-            </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
-                </ol>
-            </div>
-        </div>
         <!-- row -->
 
 
@@ -29,7 +15,7 @@
                     <div class="row">
                         <div class="col-11">
                             <div class="card-header">
-                                <h4 class="card-title">Patient Report list</h4>
+                                <h4 class="card-title">User Report list</h4>
                             </div>
                         </div>
                         <div class="col-1">
@@ -42,21 +28,22 @@
                             <table id="example3" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
-                                        <th>User name</th>
-                                        <th>bp</th>
-                                        <th>sugar</th>
-                                        <th>temperature</th>
-                                        <th>brewakfast</th>
-                                        <th>lunch</th>
-                                        <th>dinner</th>
-                                        <th>activities</th>
-                                        <th>created_at</th>
+                                        <th>Created At</th>
+                                        <th>Username</th>
+                                        <th>BP Level</th>
+                                        <th>Sugar Level</th>
+                                        <th>Body Temperature</th>
+                                        <th>Breakfast</th>
+                                        <th>Lunch</th>
+                                        <th>Dinner</th>
+                                        <th>Activities</th>                                        
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse($report as $value)
                                     <tr>
+                                        <td>{{@$value['created_at'] ? date('d-M-Y',strtotime($value['created_at'])) : '--'}}</td>
                                         <td>user name</td>
                                         <td>{{$value['bp']}}</td>
                                         <td>{{@$value['sugar']}}</td>
@@ -65,7 +52,6 @@
                                         <td>{{$value['lunch']}}</td>
                                         <td>{{$value['dinner']}}</td>
                                         <td>{{$value['activities']}}</td>
-                                        <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
                                         <td>
                                             <div class="d-flex">
                                                 @if(Auth::guard('admin')->check())

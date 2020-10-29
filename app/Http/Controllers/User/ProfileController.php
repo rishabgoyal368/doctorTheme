@@ -70,7 +70,7 @@ class ProfileController extends Controller
             // return $input;
             $save = Patient::addEdit($input);
             if ($save) {
-                $message = 'Patient added successfully.';
+                $message = 'Profile updated successfully.';
                 return redirect('/')->with(['success' => $message]);
             } else {
                 $message = 'Error. Please Try Again';

@@ -4,10 +4,10 @@
 <section class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Welcome to Drodo</h1>
+            <h1>Welcome to {{env('APP_NAME')}}</h1>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li>Your Orders</li>
+                <li>Order History</li>
             </ul>
         </div>
     </div>
@@ -20,25 +20,32 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="register-form">
-                    <h2>Your Orders</h2>
+                    <h2>Order History</h2>
 
                     <div class="table-responsive">
-                        <table id="" class="table-bordered" style="min-width: 845px">
+                        <table id="" class="table-bordered" style="min-width:100%">
                             <thead>
                                 <tr>
-                                    <th>product id</th>
+                                    <th>Product ID</th>
+                                    <th>Product rent available</th>
                                     <th>Price</th>
+                                    <th>Ordered Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse($orders as $value)
                                 <tr>
-                                    <td>{{$value['product_id']}}</td>
-                                    <td>${{@$value['price']}}</td>                                   
+                                    <td>{{$value->getProductName()}}</td>
+                                    <td>
+                                        {{$value['date_from'] ? 'Yes' : 'No'}} <br>
+                                        {{$value['date_from']}}
+                                    </td>
+                                    <td>${{@$value['price']}}</td>
+                                    <td>{{@$value['created_at'] ? date('d-M-Y h:i:s A',strtotime($value['created_at'])) : '--'}}</td>
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="6">No data Found</td>
+                                    <td colspan="10" style="text-align: center;">No Data Found</td>
                                 </tr>
                                 @endforelse
 

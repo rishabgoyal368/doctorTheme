@@ -7,7 +7,7 @@
             <h1>Welcome to {{env('APP_NAME')}}</h1>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li>Assigned Employee</li>
+                <li>Assigned Caretakers</li>
             </ul>
         </div>
     </div>
@@ -20,17 +20,17 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="register-form">
-                    <h2>Assigned Employee</h2>
+                    <h2>Assigned Caretakers</h2>
 
                     <div class="table-responsive">
-                        <table id="" class="table-bordered" style="min-width: 845px">
+                        <table id="" class="table-bordered" style="min-width: 100%">
                             <thead>
                                 <tr>
-                                    <th>Employee name</th>
-                                    <th>Employee email</th>
-                                    <th>Employee Contact</th>
-                                    <th>Employee image</th>
-                                    <th>Employee type</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile Number</th>
+                                    <th>Profile Image</th>
+                                    <!-- <th>Care taker type</th> -->
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -41,12 +41,12 @@
                                     <td>{{$value->getCare()['email']}}</td>
                                     <td>{{$value->getCare()['mobile']}}</td>                                    
                                     <td><img src="{{$value->getCare()->getProfile()}}" alt="" width='35'></td>
-                                    <td>{{$value->getCare()['type'] == '1' ? 'Doctor' : 'Care Taker'}}</td>
+                                    <!-- <td>{{$value->getCare()['type'] == '1' ? 'Doctor' : 'Care Taker'}}</td> -->
                                     <td>{{$value->status()}}</td>
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="6">No data Found</td>
+                                    <td colspan="6"  style="text-align: center;">No data Found</td>
                                 </tr>
                                 @endforelse
 

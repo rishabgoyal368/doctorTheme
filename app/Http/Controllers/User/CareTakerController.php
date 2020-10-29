@@ -18,7 +18,7 @@ class CareTakerController extends Controller
 
     public function show()
     {
-        $careTaker = CareTaker::get();
+        $careTaker = CareTaker::where('type','2')->get();
         return view('user.careTaker', compact('careTaker'));
     }
 

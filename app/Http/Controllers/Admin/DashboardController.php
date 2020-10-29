@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
 use App\Admin;
+use App\Patient;
 use App\CareTaker;
+use App\CareTakerRequest;
 use Hash;
 
 use Session;
@@ -37,7 +39,11 @@ class DashboardController extends Controller
 
     public function home()
     {
-        return view('admin.index');
+        $user = Patient::count();
+        $doctor = CareTaker::where('type','1')->count();
+        $CareTaker = CareTaker::where('type','2')->count();
+        $CareTakereq = CareTakerRequest::where('status',0)->count();
+        return view('admin.index',compact('user','doctor','CareTaker','CareTakereq'));
     }
 
     public function Validator(array $data, $id)

@@ -584,7 +584,7 @@ Navbar Area CSS
 
 .drodo-nav .navbar .navbar-nav {
   margin-left: auto;
-  margin-right: auto;
+  /*margin-right: auto;*/
 }
 
 .drodo-nav .navbar .navbar-nav .nav-item {

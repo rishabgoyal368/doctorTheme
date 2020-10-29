@@ -18,9 +18,9 @@ class IndexController extends Controller
 
     public function home()
     {
-        $careTaker = CareTaker::take(3)->get();
+        $careTaker = CareTaker::where('type', '2')->take(3)->get();
         $product = Product::take(3)->get();
-        return view('user.index',compact('careTaker','product'));
+        return view('user.index', compact('careTaker', 'product'));
     }
 
     protected function validator(array $data)
@@ -31,13 +31,20 @@ class IndexController extends Controller
         ]);
     }
 
+    protected function Regvalidator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => 'required|email|unique:patients,email',
+            'password' => 'required',
+        ]);
+    }
     public function login(Request $request)
     {
         $method = $request->method();
         if ($method == 'GET') {
             return view('user.login');
         } else if ($method == 'POST') {
-            // return 'else';
+            // return $request;
             $rd = $request->all();
             $rd['email'] = strtolower($request->input('email'));
             $request->replace($rd);
@@ -64,16 +71,21 @@ class IndexController extends Controller
         } else if ($method == 'POST') {
             // return 'else';
             $input = $request->all();
-            $input['profile_image'] = 'images/profile/small/pic1.jpg';
-            $input['password'] = bcrypt($request->password);
-            $input['gender'] = 'male';
-            $save = Patient::addEdit($input);
-            if ($save) {
-                $message = 'Patient added successfully.';
-                return redirect('/')->with(['success' => $message]);
+            $validator = $this->Regvalidator($input);
+            if ($validator->fails()) {
+                return redirect()->back()->withInput()->withErrors($validator);
             } else {
-                $message = 'Error. Please Try Again';
-                return redirect()->back()->with(['error' => $message]);
+                $input['profile_image'] = 'images/profile/small/pic1.jpg';
+                $input['password'] = bcrypt($request->password);
+                //$input['gender'] = 'male';
+                $save = Patient::addEdit($input);
+                if ($save) {
+                    $message = 'You are registered successfully.';
+                    return redirect('/login')->with(['success' => $message]);
+                } else {
+                    $message = 'Error. Please Try Again';
+                    return redirect()->back()->with(['error' => $message]);
+                }
             }
         }
     }
@@ -86,7 +98,14 @@ class IndexController extends Controller
 
     public function product()
     {
-         $product = Product::where('status','active')->get();
-         return view('user.products',compact('product'));
+        $product = Product::where('status', 'active')->get();
+        return view('user.products', compact('product'));
+    }
+
+    public function getProduct(Request $request)
+    {
+        // return $request;
+        $product = Product::where('id', $request->id)->first();
+        return view('user.productAjax', compact('product'));
     }
 }

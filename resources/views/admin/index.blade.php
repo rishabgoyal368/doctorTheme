@@ -10,18 +10,12 @@
 	<div class="container-fluid">
 		<div class="form-head d-flex mb-3 mb-md-5 align-items-start">
 			<div class="mr-auto d-none d-lg-block">
-				<h3 class="text-primary font-w600">Welcome to {{@$user->name}}</h3>
-				<p class="mb-0">Hospital Admin Dashboard Template</p>
+				<h3 class="text-primary font-w600">Welcome </h3>
+				<p class="mb-0">{{env('APP_NAME')}} Dashboard</p>
 			</div>
 
-			<div class="input-group search-area ml-auto d-inline-flex">
-				<input type="text" class="form-control" placeholder="Search here">
-				<div class="input-group-append">
-					<span class="input-group-text"><i class="flaticon-381-search-2"></i></span>
-				</div>
-			</div>
-			<a href="javascript:void(0);" class="btn btn-primary ml-3"><i class="flaticon-381-settings-2 mr-0"></i></a>
 		</div>
+		@if(Auth::guard('admin')->check())
 		<div class="row">
 			<div class="col-xl-6 col-xxl-12">
 				<div class="row">
@@ -30,11 +24,11 @@
 							<div class="card-body  p-4">
 								<div class="media">
 									<span class="mr-3">
-										<i class="flaticon-381-calendar-1"></i>
+										<i class="flaticon-381-user-7"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Appointment</p>
-										<h3 class="text-white">76</h3>
+										<p class="mb-1">Users</p>
+										<h3 class="text-white">{{$user}}</h3>
 									</div>
 								</div>
 							</div>
@@ -45,11 +39,11 @@
 							<div class="card-body p-4">
 								<div class="media">
 									<span class="mr-3">
-										<i class="flaticon-381-diamond"></i>
+										<i class="flaticon-381-user-7"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Hospital Earning</p>
-										<h3 class="text-white">$56K</h3>
+										<p class="mb-1">Caretakers</p>
+										<h3 class="text-white">{{$CareTaker}}</h3>
 									</div>
 								</div>
 							</div>
@@ -63,8 +57,8 @@
 										<i class="flaticon-381-heart"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Total Patient</p>
-										<h3 class="text-white">783K</h3>
+										<p class="mb-1">Doctors</p>
+										<h3 class="text-white">{{$doctor}}</h3>
 									</div>
 								</div>
 							</div>
@@ -78,8 +72,8 @@
 										<i class="flaticon-381-user-7"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Doctor</p>
-										<h3 class="text-white">$76</h3>
+										<p class="mb-1">Caretaker Requests</p>
+										<h3 class="text-white">{{$CareTakereq}}</h3>
 									</div>
 								</div>
 							</div>
@@ -89,6 +83,7 @@
 				
 			</div>
 		</div>
+		@endif
 	</div>
 </div>
 <!--**********************************

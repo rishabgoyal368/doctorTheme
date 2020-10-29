@@ -5,21 +5,6 @@
         ***********************************-->
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <div class="welcome-text">
-                    <h4>Hi, welcome back!</h4>
-                    <span>Datatable</span>
-                </div>
-            </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
-                </ol>
-            </div>
-        </div>
-        <!-- row -->
 
 
         <div class="row">
@@ -29,7 +14,7 @@
                     <div class="row">
                         <div class="col-11">
                             <div class="card-header">
-                                <h4 class="card-title">Patient list</h4>
+                                <h4 class="card-title">User list</h4>
                             </div>
                         </div>
                         <div class="col-1">
@@ -42,12 +27,12 @@
                             <table id="example3" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>Profile Image</th>
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
+                                        <th>Created at</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -63,8 +48,11 @@
                                         <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
                                         <td>
                                             <div class="d-flex">
+                                                @if(Auth::guard('admin')->check())
                                                 <a href="{{url('admin/edit-patient')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                @endif
+                                                <a href="{{url('/view-user')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
+                                                <!-- <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a> -->
                                             </div>
                                         </td>
                                     </tr>

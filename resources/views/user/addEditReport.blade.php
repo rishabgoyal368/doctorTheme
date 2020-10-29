@@ -4,10 +4,10 @@
 <section class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Welcome to Drodo</h1>
+           <h1>Welcome to {{env('APP_NAME')}}</h1>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li>Profile update</li>
+                <li>Add report</li>
             </ul>
         </div>
     </div>
@@ -63,7 +63,7 @@
                         
                         
 
-                        <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
+                 
 
                         <button type="submit">Register</button>
                     </form>

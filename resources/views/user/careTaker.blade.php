@@ -5,7 +5,7 @@
     <div class="container">
         <div class="drodo-grid-sorting row align-items-center">
             <div class="col-lg-6 col-md-6 result-count">
-                <p>We found <span class="count">{{count($careTaker)}}</span> care takers for you</p>
+                <p>We found <span class="count">{{count($careTaker)}}</span> Caretakers for you</p>
                 <!-- <span class="sub-title"><a href="#" data-toggle="modal" data-target="#productsFilterModal"><i class='bx bx-filter-alt'></i> Filter</a></span> -->
             </div>
         </div>
@@ -32,7 +32,7 @@
                                     <div class="cart-btn">
                                         <a href="{{url('book-care-taker')}}/{{$taker->id}}">
                                             <i class='bx bxs-cart-add'></i>
-                                            <span class="tooltip-label">book now</span>
+                                            <span class="tooltip-label">Book Now</span>
                                         </a>
                                     </div>
                                     @endif

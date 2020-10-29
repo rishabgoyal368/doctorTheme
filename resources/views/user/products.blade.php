@@ -46,6 +46,14 @@
                                         </a>
                                     </div>
                                 </li> -->
+                                <li>
+                                    <div class="quick-view-btn quick_view" data-id="{{$pro->id}}">
+                                        <a>
+                                            <i class='bx bx-search-alt'></i>
+                                            <span class="tooltip-label">Quick View</span>
+                                        </a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>

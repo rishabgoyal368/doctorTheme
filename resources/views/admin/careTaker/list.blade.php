@@ -5,21 +5,6 @@
         ***********************************-->
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <div class="welcome-text">
-                    <h4>Hi, welcome back!</h4>
-                    <span>Datatable</span>
-                </div>
-            </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
-                </ol>
-            </div>
-        </div>
-        <!-- row -->
 
 
         <div class="row">
@@ -29,7 +14,7 @@
                     <div class="row">
                         <div class="col-11">
                             <div class="card-header">
-                                <h4 class="card-title">Care Takers list</h4>
+                                <h4 class="card-title">Employees</h4>
                             </div>
                         </div>
                         <div class="col-1">
@@ -42,13 +27,14 @@
                             <table id="example3" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                
                                         <th>Profile Image</th>
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
                                         <th>Type</th>
+                                        <th>Created at</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -60,8 +46,9 @@
                                         <td>{{@$value['gender']}}</td>
                                         <td>{{$value['email']}}</td>
                                         <td><a href="javascript:void(0);"><strong>{{$value['mobile']}}</strong></a></td>
-                                        <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
                                         <td>{{$value['type'] == '1' ? 'Doctor' : 'Care Taker'}}</td>
+                                        <td>{{@$value['created_at'] ? date('d-M-y',strtotime($value['created_at'])) : '--'}}</td>
+                                        
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{url('admin/edit-care-taker')}}/{{$value['id']}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>

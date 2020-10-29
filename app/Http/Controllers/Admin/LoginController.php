@@ -85,10 +85,10 @@ class LoginController extends Controller
         $method = $request->method();
         if ($method == 'GET') {
             // Admin::create([
-            //     // 'name' => 'rishab',
-                // // 'email' => 'rishab@test.com',
-                // // 'password' => bcrypt('12345'),
-            //     // 'profile_image' => '-',
+            //     'name' => 'rishab',
+            //     'email' => 'rishab@test.com',
+            //     'password' => bcrypt('12345'),
+            //     'profile_image' => '-',
             // ]);
             return view('admin.login');
         } else if ($method == 'POST') {

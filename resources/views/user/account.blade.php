@@ -4,16 +4,15 @@
 <section class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Welcome to Drodo</h1>
+            <h1>Welcome to {{env('APP_NAME')}}</h1>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li>Profile update</li>
+                <li>Profile Update</li>
             </ul>
         </div>
     </div>
 </section>
 <!-- End Page Title Area -->
-
 <!-- Start Profile Authentication Area -->
 <section class="profile-authentication-area ptb-70">
     <div class="container">
@@ -71,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">Life story </label>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Life Story </label>
                                     <div class="col-lg-6">
                                         <textarea name="life_story" class="form-control" id="" cols="30" rows="10">{{@$patient->description}}</textarea>
                                         @if ($errors->has('life_story'))
@@ -142,9 +141,9 @@
                                         @endif
                                     </div>
                                 </div>
-                                <h2>Emergency Details</h2>
+                                <h2>Emergency Contact Details</h2>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">name <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Contact Name <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="emergency_name" value="{{$patient->emergency_name}}" accept="image/x-png,image/jpeg">
@@ -156,7 +155,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">contact <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Contact Number <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="emergency_contact" value="{{@$patient->emergency_contact}}" accept="image/x-png,image/jpeg">
@@ -168,7 +167,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">relation <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Relation <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" name="emergency_relation" id="" class="form-control" value="{{@$patient->emergency_relation}}">
@@ -182,10 +181,10 @@
 
                                 <h2>Medical Record</h2>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">height <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Height <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="height" placeholder="Your Height.." value="{{@$patient->height ?: old('height')}}" required>
+                                        <input type="text" class="form-control" name="height" placeholder="Your Height" value="{{@$patient->height ?: old('height')}}" required>
                                         @if ($errors->has('height'))
                                         <div class="alert alert-danger">
                                             <strong>{{ $errors->first('height') }}</strong>
@@ -194,10 +193,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">weight <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Weight <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="weight" placeholder="Your weight.." value="{{@$patient->weight ?: old('weight')}}" required>
+                                        <input type="text" class="form-control" name="weight" placeholder="Your Weight" value="{{@$patient->weight ?: old('weight')}}" required>
                                         @if ($errors->has('weight'))
                                         <div class="alert alert-danger">
                                             <strong>{{ $errors->first('weight') }}</strong>
@@ -206,10 +205,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">current health concern <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Current Health Concern (if any)
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="current_health_concern" placeholder="Your current_health_concern.." value="{{@$patient->current_health_concern ?: old('current_health_concern')}}" required>
+                                        <input type="text" class="form-control" name="current_health_concern" placeholder="Your Current Health Concern" value="{{@$patient->current_health_concern ?: old('current_health_concern')}}" >
                                         @if ($errors->has('current_health_concern'))
                                         <div class="alert alert-danger">
                                             <strong>{{ $errors->first('current_health_concern') }}</strong>
@@ -218,10 +217,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">current medication <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Current Medication (if any) 
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="current_medication" placeholder="Your current_medication.." value="{{@$patient->current_medication ?: old('current_medication')}}" required>
+                                        <input type="text" class="form-control" name="current_medication" placeholder="Your Current Medication" value="{{@$patient->current_medication ?: old('current_medication')}}" >
                                         @if ($errors->has('current_medication'))
                                         <div class="alert alert-danger">
                                             <strong>{{ $errors->first('current_medication') }}</strong>
@@ -230,10 +229,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">alergy <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Allergies (if any) 
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="alergy" placeholder="Your alergy.." value="{{@$patient->alergy ?: old('alergy')}}" required>
+                                        <input type="text" class="form-control" name="alergy" placeholder="Your allergies" value="{{@$patient->alergy ?: old('alergy')}}" >
                                         @if ($errors->has('alergy'))
                                         <div class="alert alert-danger">
                                             <strong>{{ $errors->first('alergy') }}</strong>
@@ -242,11 +241,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">report_file <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Report File (if any) 
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="file" class="form-control" name="report_file" placeholder="Your report_file.." value="{{@$patient->report_file ?: old('report_file')}}" @if(!@$patient->report_file)
-                                        required @endif>
+                                        <input type="file" class="form-control" name="report_file" placeholder="Your Report File" value="{{@$patient->report_file ?: old('report_file')}}" @if(!@$patient->report_file)
+                                         @endif>
                                         @if($patient->report_file)
                                         <a href="{{$patient->getReport()}}" target="_blank">your report file ({{$patient->report_file}})</a>
                                         @endif
@@ -261,7 +260,7 @@
 
                             </div>
                             <button type="submit" class="btn mr-2 btn-primary">Submit</button>
-                            <a href="{{url('admin/patients')}}" class="btn btn-light">cancel</a>
+                            <!-- <a href="{{url('admin/patients')}}" class="btn btn-light">cancel</a> -->
                         </div>
                     </form>
                 </div>

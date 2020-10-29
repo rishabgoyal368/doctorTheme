@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Admin;
 use App\CareTaker;
+use App\Patient;
+use App\CareTakerRequest;
 use Hash;
 
 use Session;
@@ -140,4 +142,31 @@ class DashboardController extends Controller
         Auth::guard('cakerTaker')->logout();
         return redirect('/employee');
     }
+
+
+    public function users()
+    {
+        $type = Auth::guard('cakerTaker')->user()->type;
+        if($type == '1')
+        {
+            $user = CareTakerRequest::where(['care_taker_id' => Auth::guard('cakerTaker')->user()->id, 'status' => '1'])->select('user_id')->pluck('user_id')->toArray();
+            $patient = Patient::whereIn('id', $user)->get();
+        }
+        else
+        {
+            $patient = Patient::get();            
+        }
+   
+       return view('admin.patient.list', compact('patient'));
+
+
+    }
+
+
+    public function ViewUsers($id)
+    {
+        $patient = Patient::find($id);            
+       return view('admin.patient.view', compact('patient'));
+    }
+
 }

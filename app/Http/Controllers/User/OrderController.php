@@ -34,11 +34,14 @@ class OrderController extends Controller
         return view('user.orders', compact('orders'));
     }
 
-    public function order($id)
+    public function order(Request $request)
     {
+        // return $request;
         $data['user_id'] = Auth::guard('user')->user()->id;
-        $data['product_id'] = $id;
-        $data['price'] = Product::select('price')->where('id', $id)->pluck('price')->first();
+        $data['product_id'] = $request->id;
+        $data['price'] = Product::select('price')->where('id', $request->id)->pluck('price')->first();
+        $data['date_from'] = @$request['start-date'] . ' to ' . @$request['end-date'];
+        // return $data;
         $care = Order::add($data);
         if ($care) {
             $message = 'Order placed successfully.';

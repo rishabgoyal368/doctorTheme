@@ -21,10 +21,11 @@
     <link rel="stylesheet" href="{{url('assets/css/magnific-popup.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/responsive.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <title>Drodo - Emergency Medical Supply HTML Template</title>
+    <title>{{env('APP_NAME')}}</title>
 
-    <link rel="icon" type="image/png" href="{{url('assets/img/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{url('assets/img/logo.png')}}">
 </head>
 
 <body>
@@ -38,8 +39,8 @@
             <div class="container">
                 <div class="drodo-responsive-menu">
                     <div class="logo">
-                       
-                        <a href="{{url('/')}}" class="logo d-inline-block"><img src="assets/img/logo.png" alt="image" style="width:150px;height:70px"></a>                            
+
+                        <a href="{{url('/')}}" class="logo d-inline-block"><img src="assets/img/logo.png" alt="image" style="width:150px;height:70px"></a>
                         </a>
                     </div>
                 </div>
@@ -48,8 +49,8 @@
         <div class="drodo-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <!-- <a class="navbar-brand" href="{{url('/')}}"> -->
-                        <a href="{{url('/')}}" class="navbar-brand"><img src="assets/img/logo.png" alt="image" style="width:150px;height:70px"></a>                        
+
+                    <a href="{{url('/')}}" class="navbar-brand"><img src="assets/img/logo.png" alt="image" style="width:150px;height:70px"></a>
                     </a>
 
                     <div class="collapse navbar-collapse mean-menu">
@@ -57,21 +58,27 @@
 
 
                             <li class="nav-item"><a href="{{url('/')}}" class="nav-link active">Home</a></li>
+                            <li class="nav-item"><a href="{{url('/')}}#who_we_are" class="nav-link">Who we are</a></li>
+                            <li class="nav-item"><a href="{{url('/')}}#what_we_do" class="nav-link">What we do</a></li>
+                            <li class="nav-item"><a href="{{url('/products')}}" class="nav-link">Products</a></li>
                             @if(Auth::guard('user')->check())
+                            <li class="nav-item"><a href="{{url('/care-takers')}}" class="nav-link">Caretakers</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">My Account <i class='bx bx-chevron-down'></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="{{url('/my-account')}}" class="nav-link">Account</a></li>
+                                    <li class="nav-item"><a href="{{url('/my-account')}}" class="nav-link">Profile</a></li>
 
-                                    <li class="nav-item"><a href="{{url('/assign-care-taker')}}" class="nav-link">Care taker</a></li>
+                                    <li class="nav-item"><a href="{{url('/assign-care-taker')}}" class="nav-link">Caretaker</a></li>
 
-                                    <li class="nav-item"><a href="{{url('/reports')}}" class="nav-link">Report</a></li>
+                                    <li class="nav-item"><a href="{{url('/reports')}}" class="nav-link">Daily Report</a></li>
 
-                                    <li class="nav-item"><a href="{{url('/order')}}" class="nav-link">Order</a></li>
+                                    <li class="nav-item"><a href="{{url('/order')}}" class="nav-link">Order History</a></li>
+
+                                    <li class="nav-item"><a href="{{url('/user-products')}}" class="nav-link">Products</a></li>
 
                                     <li class="nav-item"><a href="{{url('/logout')}}" class="nav-link">Logout</a></li>
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item"><a href="{{url('/my-account')}}" class="nav-link">My Account</a></li> -->
+
                             @else
                             <li class="nav-item"><a href="{{url('/login')}}" class="nav-link">Login</a></li>
                             @endif
@@ -119,18 +126,18 @@
                     <div class="single-footer-widget">
                         <a href="#" class="logo d-inline-block"><img src="assets/img/logo.png" alt="image"></a>
                         <ul class="footer-contact-info">
-                            <li><span>Hotline:</span> <a href="#">16768</a></li>
-                            <li><span>Phone:</span> <a href="tel:+1234567898">(+123) 456-7898</a></li>
-                            <li><span>Email:</span> <a href="mailto:hello@drodo.com">hello@drodo.com</a></li>
-                            <li><span>Address:</span> <a href="#" target="_blank">6890 Blvd, The Bronx, NY 1058, USA</a></li>
+                            <li><span>Hotline:</span> <a href="#">0413705763</a></li>
+                            <li><span>Phone:</span> <a href="tel:+1234567898">(+61) 4231-79440</a></li>
+                            <li><span>Email:</span> <a href="mailto:hello@drodo.com">hello@elderlyhealthcare.com</a></li>
+                            <li><span>Address:</span> <a href="#" target="_blank">Victoria University, Ballarat Rd, Footscray VIC 3011, AUS</a></li>
                         </ul>
-                        <ul class="social">
+                        <!-- <ul class="social">
                             <li><a href="#" target="_blank"><i class='bx bxl-facebook-square'></i></a></li>
                             <li><a href="#" target="_blank"><i class="bx bxl-twitter"></i></a></li>
                             <li><a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a></li>
                             <li><a href="#" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
                             <li><a href="#" target="_blank"><i class='bx bxl-pinterest'></i></a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
 
@@ -139,8 +146,8 @@
                         <h3>Information</h3>
 
                         <ul class="link-list">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="about.html">Who we are</a></li>
+                            <li><a href="contact.html">What we do</a></li>
                             <li><a href="privacy-policy.html">Privacy Policy</a></li>
                             <li><a href="terms-of-service.html">Terms & Conditions</a></li>
                             <li><a href="customer-service.html">Delivery Information</a></li>
@@ -182,10 +189,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
-                        <p>Copyright <i class='bx bx-copyright'></i>2020 Drodo. Designed By <a href="#" target="_blank">EnvyTheme</a></p>
+                        <p>Copyright © Designed &amp; Developed by Elderly Healthcare</a> 2020</p>
                     </div>
 
-                    <div class="col-lg-6 col-md-6">
+                    <!-- <div class="col-lg-6 col-md-6">
                         <div class="payment-types">
                             <ul class="d-flex align-items-center justify-content-end">
                                 <li>We accept payment via:</li>
@@ -196,7 +203,7 @@
                                 <li><a href="#" target="_blank"><img src="assets/img/payment-types/american-express.png" alt="image"></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -211,76 +218,8 @@
                     <span aria-hidden="true"><i class='bx bx-x'></i></span>
                 </button>
 
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="products-image">
-                            <img src="assets/img/products/products-img1.jpg" alt="image">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="products-content">
-                            <h3><a href="#">Coronavirus Face Mask</a></h3>
-
-                            <div class="price">
-                                <span class="old-price">$45.00</span>
-                                <span class="new-price">$39.00</span>
-                            </div>
-
-                            <div class="products-review">
-                                <div class="rating">
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                </div>
-                                <a href="#" class="rating-count">3 reviews</a>
-                            </div>
-
-                            <ul class="products-info">
-                                <li><span>Vendor:</span> <a href="#">Lereve</a></li>
-                                <li><span>Availability:</span> <a href="#">In stock (7 items)</a></li>
-                                <li><span>Products Type:</span> <a href="#">Mask</a></li>
-                            </ul>
-
-                            <div class="products-color-switch">
-                                <h4>Color:</h4>
-
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Black" class="color-black"></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="White" class="color-white"></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Green" class="color-green"></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Yellow Green" class="color-yellowgreen"></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Teal" class="color-teal"></a></li>
-                                </ul>
-                            </div>
-
-                            <div class="products-size-wrapper">
-                                <h4>Size:</h4>
-
-                                <ul>
-                                    <li><a href="#">XS</a></li>
-                                    <li class="active"><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">XL</a></li>
-                                    <li><a href="#">XXL</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="products-add-to-cart">
-                                <div class="input-counter">
-                                    <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                    <input type="text" min="1" value="1">
-                                    <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                </div>
-
-                                <button type="submit" class="default-btn"><i class="flaticon-trolley"></i> Add to Cart</button>
-                            </div>
-
-                            <a href="#" class="view-full-info">or View Full Info</a>
-                        </div>
-                    </div>
+                <div class="row align-items-center" id="view_product">
+                
                 </div>
             </div>
         </div>
@@ -588,8 +527,34 @@
     <!-- Datatable -->
     <script src="{{asset('vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/plugins-init/datatables.init.js')}}"></script>
+
+
+    <script>
+        $('.quick_view').click(function() {
+            console.log('hello')
+            var id = $(this).attr('data-id')
+            console.log(id)
+            $.ajax({
+                url: "/get-product",
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    'id': id
+                },
+                success: function(response) {
+                    $('#view_product').html(response)
+                    $('#productsQuickView').modal('show')
+                    // You will get response from your PHP page (what you echo or print)
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        });
+    </script>
 </body>
 
-<!-- Mirrored from templates.envytheme.com/drodo/default/{{url('/')}} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Oct 2020 14:37:22 GMT -->
 
 </html>

@@ -7,14 +7,7 @@
         ***********************************-->
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Validation</a></li>
-                </ol>
-            </div>
-        </div>
+
         <!-- row -->
         <div class="row">
             <div class="col-lg-12">
@@ -28,17 +21,17 @@
                                 @csrf -->
                                 <input type="hidden" name="id" value="{{@$report->id}}">
                                 <div class="form-group">
-                                    <label>BP</label>
+                                    <label>BP Level</label>
                                     <input type="text" class="form-control" name="bp" placeholder="BP" value="{{@$report['bp']}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>sugar</label>
+                                    <label>Sugar Level</label>
                                     <input type="text" class="form-control" name="sugar" placeholder="sugar" value="{{@$report['sugar']}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Temperature</label>
+                                    <label>Body Temperature</label>
                                     <input type="text" class="form-control" name="temperature" placeholder="temperature" value="{{@$report['temperature']}}">
                                 </div>
 
@@ -48,12 +41,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>lunch</label>
+                                    <label>Lunch</label>
                                     <input type="text" class="form-control" name="lunch" placeholder="lunch" value="{{@$report['lunch']}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>dinner</label>
+                                    <label>Dinner</label>
                                     <input type="text" class="form-control" name="dinner" placeholder="Dinner" value="{{@$report['dinner']}}">
                                 </div>
 

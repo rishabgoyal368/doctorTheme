@@ -48,9 +48,9 @@ class PatientController extends Controller
             $patient = [];
             $patient = Patient::find($id);
             if ($patient) {
-                $label = 'Edit Patient';
+                $label = 'Edit User';
             } else {
-                $label = 'Add Patient';
+                $label = 'Add User';
             }
             return view('admin.patient.addEdit', compact('patient', 'label'));
         } else if ($method == 'POST') {
@@ -94,7 +94,8 @@ class PatientController extends Controller
                 // return $input;
                 $save = Patient::addEdit($input);
                 if ($save) {
-                    $message = 'Patient added successfully.';
+                    $msz = @$request['id'] ? 'updated' : 'added' ;
+                    $message = 'User '.$msz.' successfully.';
                     return redirect('admin/patients')->with(['success' => $message]);
                 } else {
                     $message = 'Error. Please Try Again';

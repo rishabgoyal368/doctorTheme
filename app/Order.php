@@ -10,6 +10,7 @@ class Order extends Model
         'product_id',
         'user_id',
         'price',
+        'date_from'
     ];
 
     public static function add($data)
@@ -22,6 +23,7 @@ class Order extends Model
                 'product_id' => @$data['product_id'] ?: null,
                 'user_id' => @$data['user_id'] ?: null,
                 'price' => @$data['price'] ?: null,
+                'date_from' => @$data['date_from'] ?: null,
             ]
         );
     }

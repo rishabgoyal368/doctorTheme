@@ -13,6 +13,7 @@ class Product extends Model
         'upload_by',
         'image',
         'status',
+        'type', // 1 = yes, 2 = no
     ];
 
     public static function addEdit($data)
@@ -28,6 +29,7 @@ class Product extends Model
                 'upload_by' => @$data['upload_by'] ?: null,
                 'image' => @$data['image'] ?: null,
                 'status' => @$data['status'] ?: null,
+                'type' => @$data['type'] ?: null,
             ]
         );
     }
@@ -40,5 +42,22 @@ class Product extends Model
         } else {
             return env('APP_URL') . '/' . 'images/profile/small/pic1.jpg';
         }
+    }
+
+    public function getType()
+    {
+        $type = $this->type;
+        return $type == '1' ? 'yes' : 'no';
+    }
+
+    public function uploadBy()
+    {
+        $upload = $this->upload_by;
+        if ($user = Admin::where('id', $upload)->first()) {
+            return $user['name'];
+        } else if ($user = Patient::where('id', $upload)->first()) {
+            return @$user['name'];
+        }
+        return '---';
     }
 }

@@ -7,14 +7,6 @@
         ***********************************-->
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Validation</a></li>
-                </ol>
-            </div>
-        </div>
         <!-- row -->
         <div class="row">
             <div class="col-lg-12">
@@ -75,6 +67,23 @@
                                         </div>
 
                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-type">is rent available <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select name="type" id="">
+                                                    <option value="" selected>Select available</option>
+                                                    <option value="1" @if(@$product->type == '1') selected @endif >Yes</option>
+                                                    <option value="2" @if(@$product->type == '2') selected @endif >No</option>
+                                                </select>
+                                                @if ($errors->has('type'))
+                                                <div class="alert alert-danger">
+                                                    <strong>{{ $errors->first('type') }}</strong>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-name">Description
                                                 <span class="text-danger">*</span>
                                             </label>
@@ -104,7 +113,7 @@
                                         </div>
                                     </div>
                                     <button type="submit" class="btn mr-2 btn-primary">Submit</button>
-                                    <a href="{{url('admin/patients')}}" class="btn btn-light">cancel</a>
+                                    <a href="{{url('admin/products')}}" class="btn btn-light">cancel</a>
                                     <!-- <button type="submit" class="btn btn-light">cencel</button> -->
                                 </div>
                             </form>

@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('upload_by',100)->nullable();
             $table->string('image',100);
             $table->string('status',100)->nullable();
+            $table->string('type',20);
             $table->softDeletes('deleted_at', 0)->nullable();   
             $table->timestamps();
         });

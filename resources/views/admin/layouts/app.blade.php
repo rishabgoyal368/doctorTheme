@@ -10,7 +10,9 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>{{env('APP_NAME')}} </title>
 	<!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="{{url('assets/img/logo.png')}}">
+	
+	<!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"> -->
 	<link href="{{asset('vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('vendor/chartist/css/chartist.min.css')}}">
 	<link href="{{asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
@@ -63,9 +65,7 @@
 				<a href="{{url('/employee/home')}}" class="brand-logo">
 					@endif
 
-					<img class="logo-abbr" src="{{asset('images/logo.png')}}" alt="">
-					<img class="logo-compact" src="{{asset('images/logo-text.png')}}" alt="">
-					<img class="brand-title" src="{{asset('images/logo-text.png')}}" alt="">
+					<img class="logo-abbr" src="{{asset('assets/img/logo.png')}}" alt="" style="max-width: 100%;">
 				</a>
 
 				<div class="nav-control">
@@ -99,11 +99,11 @@
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="#" role="button" data-toggle="dropdown">
 									<div class="header-info">
-										<span>{{$user['name']}}</span>
+										<span>{{@$user['name']}}</span>
 										@if(@$user['type'] == '1')
 										<small>Doctor</small>
-										@elseif($user['type'] == '2')
-										<small>Care Taker</small>
+										@elseif(@$user['type'] == '2')
+										<small>Caretaker</small>
 										@else
 										<small>ADMIN</small>
 										@endif
@@ -199,7 +199,7 @@
         ***********************************-->
 		<div class="footer">
 			<div class="copyright">
-				<p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/" target="_blank">DexignZone</a> 2020</p>
+				<p>Copyright © Designed &amp; Developed by Elderly Healthcare</a> 2020</p>
 			</div>
 		</div>
 		<!--**********************************

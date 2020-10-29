@@ -39,7 +39,7 @@ class ReportController extends Controller
         $method = $request->method();
         if ($method == 'GET') {
             $patient = [];
-            $report = Report::find($id);
+            $report = Report::where('id',$id)->first();
             if ($patient) {
                 $label = 'Edit Report';
             } else {

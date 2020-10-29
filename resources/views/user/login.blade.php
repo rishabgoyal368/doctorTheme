@@ -4,10 +4,10 @@
 <section class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Welcome to Drodo</h1>
+            <h1>Welcome to {{env('APP_NAME')}}</h1>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li>Profile Authentication</li>
+                <li><a href="/">Home</a></li>
+                <li>Login/Register</li>
             </ul>
         </div>
     </div>
@@ -25,8 +25,8 @@
                     <form method="POST" action="{{url('/login')}}">
                         @csrf
                         <div class="form-group">
-                            <label>Username or email</label>
-                            <input type="text" class="form-control" name="email" placeholder="Username or email">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" placeholder="Email" required>
                             @if ($errors->has('email'))
                             <div class="alert alert-danger">
                                 <strong>{{ $errors->first('email') }}</strong>
@@ -36,7 +36,7 @@
 
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                             @if ($errors->has('password'))
                             <div class="alert alert-danger">
                                 <strong>{{ $errors->first('password') }}</strong>
@@ -44,7 +44,7 @@
                             @endif
                         </div>
 
-                        <div class="row align-items-center">
+                       <!--  <div class="row align-items-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 remember-me-wrap">
                                 <p>
                                     <input type="checkbox" id="test2">
@@ -55,7 +55,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 lost-your-password-wrap">
                                 <a href="#" class="lost-your-password">Lost your password?</a>
                             </div>
-                        </div>
+                        </div> -->
 
                         <button type="submit">Log In</button>
                     </form>
@@ -69,31 +69,28 @@
                     <form method="POST" action="{{url('/register')}}">
                         @csrf
                         <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" name="name" placeholder="Username or email">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name" placeholder="Name" required>
                         </div>
 
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Username or email">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label>Gender</label>
-                            <select name="gender">
+                            <select name="gender" style="width:100%">
                                 <option value="">Select Gender</option>
                                 <option value="male">Male</option>
-                                <option value="female">FeMale</option>
+                                <option value="female">Female</option>
                                 <option value="others">Others</option>
                             </select>
                         </div>
-
+                        <br><br>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
-
-                        <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
-
                         <button type="submit">Register</button>
                     </form>
                 </div>

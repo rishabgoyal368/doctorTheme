@@ -49,9 +49,9 @@ class CareTakerController extends Controller
             $patient = [];
             $patient = CareTaker::find($id);
             if ($patient) {
-                $label = 'Edit Care Taker';
+                $label = 'Edit Employee';
             } else {
-                $label = 'Add Care Taker';
+                $label = 'Add Employee';
             }
             return view('admin.careTaker.addEdit', compact('patient', 'label'));
         } else if ($method == 'POST') {
@@ -95,7 +95,9 @@ class CareTakerController extends Controller
                 // return $input;
                 $save = CareTaker::addEdit($input);
                 if ($save) {
-                    $message = 'Care Taker added successfully.';
+                    $msz = @$request['id'] ? 'updated' : 'added' ;
+                    $message = 'Employee '.$msz.' successfully.';
+                    // $message = 'Employee added successfully.';
                     return redirect('admin/care-takers')->with(['success' => $message]);
                 } else {
                     $message = 'Error. Please Try Again';
